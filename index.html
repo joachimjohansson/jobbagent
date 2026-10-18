@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jobbagent</title>
+<style>
+  :root { --bg:#f6f8fa; --card:#ffffff; --ink:#14202e; --muted:#5d6b7a; --line:#dde3ea; --accent:#1f5fa8; --new:#e8f1fb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0f1720; --card:#16212d; --ink:#e7edf3; --muted:#93a1b0; --line:#26354a; --accent:#6fb0f0; --new:#183049; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:1.6rem; margin:0 0 4px; }
+  .meta { color:var(--muted); margin:0 0 20px; }
+  input { width:100%; padding:10px 12px; font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; margin-bottom:16px; }
+  input:focus-visible, a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  .job { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:12px 14px; margin-bottom:10px; }
+  .job.new { background:var(--new); border-color:var(--accent); }
+  .job a { color:var(--accent); font-weight:600; text-decoration:none; }
+  .job a:hover { text-decoration:underline; }
+  .job p { margin:2px 0 0; color:var(--muted); font-size:.92rem; }
+  .empty { color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Jobb i Göteborg</h1>
+  <p class="meta" id="meta">Hämtar jobb…</p>
+  <input id="filter" type="search" placeholder="Filtrera på titel, företag eller ort" aria-label="Filtrera jobb">
+  <div id="list"></div>
+</main>
+<script>
+let data = { jobs: [] };
+const list = document.getElementById("list");
+const meta = document.getElementById("meta");
+
+function isNew(job) {
+  const age = (Date.now() - new Date(job.published).getTime()) / 86400000;
+  return age <= 2;
+}
+
+function render() {
+  const q = document.getElementById("filter").value.trim().toLowerCase();
+  const jobs = data.jobs.filter(j => (j.title + " " + j.employer + " " + j.place).toLowerCase().includes(q));
+  list.replaceChildren();
+  if (!jobs.length) {
+    list.innerHTML = '<p class="empty">Inga jobb matchar filtret.</p>';
+    return;
+  }
+  for (const j of jobs) {
+    const div = document.createElement("div");
+    div.className = "job" + (isNew(j) ? " new" : "");
+    const a = document.createElement("a");
+    a.href = j.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = j.title;
+    const p = document.createElement("p");
+    const parts = [j.employer, j.place, "Publicerad " + j.published];
+    if (j.deadline) parts.push("Sista ansökningsdag " + j.deadline);
+    p.textContent = parts.filter(Boolean).join(", ");
+    div.append(a, p);
+    list.append(div);
+  }
+}
+
+fetch("jobs.json")
+  .then(r => r.json())
+  .then(d => {
+    data = d;
+    const when = new Date(d.updated).toLocaleString("sv-SE", { dateStyle: "long", timeStyle: "short" });
+    meta.textContent = d.jobs.length + " jobb. Uppdaterad " + when + ". Nya jobb (senaste två dagarna) har blå bakgrund.";
+    render();
+  })
+  .catch(() => { meta.textContent = "Kunde inte läsa jobs.json. Kör uppdateringen under Actions först."; });
+
+document.getElementById("filter").addEventListener("input", render);
+</script>
+</body>
+</html>
