@@ -14,10 +14,14 @@
   main { max-width:760px; margin:0 auto; padding:24px 16px 48px; }
   h1 { font-size:1.6rem; margin:0 0 4px; }
   .meta { color:var(--muted); margin:0 0 20px; }
-  input { width:100%; padding:10px 12px; font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; margin-bottom:16px; }
+  input[type=search] { width:100%; padding:10px 12px; font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; margin-bottom:10px; }
   input:focus-visible, a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
-  .job { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:12px 14px; margin-bottom:10px; }
+  .tools { display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:16px; color:var(--muted); font-size:.92rem; }
+  .tools label { display:flex; align-items:center; gap:6px; cursor:pointer; }
+  .job { display:flex; gap:12px; align-items:flex-start; background:var(--card); border:1px solid var(--line); border-radius:6px; padding:12px 14px; margin-bottom:10px; }
   .job.new { background:var(--new); border-color:var(--accent); }
+  .job.done { opacity:.6; }
+  .job input[type=checkbox] { width:22px; height:22px; margin:2px 0 0; flex:none; cursor:pointer; accent-color:var(--accent); }
   .job a { color:var(--accent); font-weight:600; text-decoration:none; }
   .job a:hover { text-decoration:underline; }
   .job p { margin:2px 0 0; color:var(--muted); font-size:.92rem; }
@@ -29,9 +33,20 @@
   <h1>Jobb i Göteborg</h1>
   <p class="meta" id="meta">Hämtar jobb…</p>
   <input id="filter" type="search" placeholder="Filtrera på titel, företag eller ort" aria-label="Filtrera jobb">
+  <div class="tools">
+    <label><input type="checkbox" id="hide"> Dölj jobb jag har sökt</label>
+    <span id="count"></span>
+  </div>
   <div id="list"></div>
 </main>
 <script>
+const KEY = "jobbagent-sokta";
+let applied = new Set();
+try { applied = new Set(JSON.parse(localStorage.getItem(KEY) || "[]")); } catch (e) {}
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify([...applied])); } catch (e) {}
+}
+
 let data = { jobs: [] };
 const list = document.getElementById("list");
 const meta = document.getElementById("meta");
@@ -43,7 +58,12 @@ function isNew(job) {
 
 function render() {
   const q = document.getElementById("filter").value.trim().toLowerCase();
-  const jobs = data.jobs.filter(j => (j.title + " " + j.employer + " " + j.place).toLowerCase().includes(q));
+  const hide = document.getElementById("hide").checked;
+  const jobs = data.jobs.filter(j =>
+    (j.title + " " + j.employer + " " + j.place).toLowerCase().includes(q) &&
+    !(hide && applied.has(j.id))
+  );
+  document.getElementById("count").textContent = applied.size + " markerade som sökta";
   list.replaceChildren();
   if (!jobs.length) {
     list.innerHTML = '<p class="empty">Inga jobb matchar filtret.</p>';
@@ -51,14 +71,28 @@ function render() {
   }
   for (const j of jobs) {
     const div = document.createElement("div");
-    div.className = "job" + (isNew(j) ? " new" : "");
+    div.className = "job" + (isNew(j) ? " new" : "") + (applied.has(j.id) ? " done" : "");
+
+    const box = document.createElement("input");
+    box.type = "checkbox";
+    box.checked = applied.has(j.id);
+    box.setAttribute("aria-label", "Markera som sökt: " + j.title);
+    box.addEventListener("change", () => {
+      if (box.checked) applied.add(j.id); else applied.delete(j.id);
+      save();
+      render();
+    });
+
+    const body = document.createElement("div");
     const a = document.createElement("a");
     a.href = j.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = j.title;
     const p = document.createElement("p");
     const parts = [j.employer, j.place, "Publicerad " + j.published];
     if (j.deadline) parts.push("Sista ansökningsdag " + j.deadline);
     p.textContent = parts.filter(Boolean).join(", ");
-    div.append(a, p);
+    body.append(a, p);
+
+    div.append(box, body);
     list.append(div);
   }
 }
@@ -74,6 +108,7 @@ fetch("jobs.json")
   .catch(() => { meta.textContent = "Kunde inte läsa jobs.json. Kör uppdateringen under Actions först."; });
 
 document.getElementById("filter").addEventListener("input", render);
+document.getElementById("hide").addEventListener("change", render);
 </script>
 </body>
 </html>
