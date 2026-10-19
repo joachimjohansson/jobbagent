@@ -28,6 +28,8 @@
   .job a { color:var(--accent); font-weight:600; text-decoration:none; }
   .job a:hover { text-decoration:underline; }
   .job p { margin:2px 0 0; color:var(--muted); font-size:.92rem; }
+  .links { margin:0 0 14px; color:var(--muted); font-size:.92rem; }
+  .links a { color:var(--accent); }
   .empty { color:var(--muted); }
 </style>
 </head>
@@ -35,6 +37,7 @@
 <main>
   <h1>Jobb i Göteborg</h1>
   <p class="meta" id="meta">Hämtar jobb…</p>
+  <p class="links" id="links"></p>
   <input id="filter" type="search" placeholder="Filtrera på titel, företag eller ort" aria-label="Filtrera jobb">
   <div class="tools">
     <label><input type="checkbox" id="hide"> Dölj jobb jag har sökt</label>
@@ -92,6 +95,7 @@ function render() {
     const p = document.createElement("p");
     const parts = [j.employer, j.place, "Publicerad " + j.published];
     if (j.deadline) parts.push("Sista ansökningsdag " + j.deadline);
+    if (j.source) parts.push("Källa: " + j.source);
     p.textContent = parts.filter(Boolean).join(", ");
     body.append(a, p);
 
@@ -99,6 +103,15 @@ function render() {
     list.append(div);
   }
 }
+
+// LINKS-START
+const terms = ["säljingenjör", "teknisk säljare", "sales engineer", "innesäljare"];
+const liQuery = terms.map(t => t.includes(" ") ? '"' + t + '"' : t).join(" OR ");
+const inQuery = terms.map(t => t.includes(" ") ? '"' + t + '"' : t).join(" or ");
+document.getElementById("links").innerHTML = "Sök själv: " +
+  '<a href="https://www.linkedin.com/jobs/search/?keywords=' + encodeURIComponent(liQuery) + '&location=' + encodeURIComponent("Göteborg") + '&sortBy=DD" target="_blank" rel="noopener">LinkedIn</a> · ' +
+  '<a href="https://se.indeed.com/jobs?q=' + encodeURIComponent(inQuery) + '&l=' + encodeURIComponent("Göteborg") + '&sort=date" target="_blank" rel="noopener">Indeed</a>';
+// LINKS-END
 
 fetch("jobs.json")
   .then(r => r.json())
