@@ -7,36 +7,41 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#f6f8fa; --card:#ffffff; --ink:#14202e; --muted:#5d6b7a; --line:#dde3ea; --accent:#1f5fa8; --new:#e8f1fb; }
+  :root { --bg:#eaeff4; --card:#ffffff; --ink:#0b1520; --muted:#43515f; --line:#b4c0cc; --accent:#174e8c; --new:#d9e8f9; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#0f1720; --card:#16212d; --ink:#e7edf3; --muted:#93a1b0; --line:#26354a; --accent:#6fb0f0; --new:#183049; }
+    :root { --bg:#0b121a; --card:#131d28; --ink:#f3f7fb; --muted:#b4c0cc; --line:#3a4d66; --accent:#8cc4fa; --new:#1c3a5c; }
   }
   * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
-  main { max-width:760px; margin:0 auto; padding:24px 16px 48px; }
-  h1 { font-size:1.6rem; margin:0 0 4px; }
+  html { font-size:112.5%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:1rem/1.55 "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width:780px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font:700 1.6rem/1.2 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing:-.01em; margin:0 0 6px; }
   .meta { color:var(--muted); margin:0 0 20px; }
   input[type=search] { width:100%; padding:10px 12px; font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; margin-bottom:10px; }
   input:focus-visible, a:focus-visible, button:focus-visible, select:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
-  .tools { display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; margin-bottom:16px; color:var(--muted); font-size:.92rem; }
+  .tools { display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; margin-bottom:16px; color:var(--muted); font-size:.95rem; }
   .tools label { display:flex; align-items:center; gap:6px; cursor:pointer; }
   .tools select, .tools button { font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; padding:4px 10px; cursor:pointer; }
   .job { display:flex; gap:12px; align-items:flex-start; background:var(--card); border:1px solid var(--line); border-radius:6px; padding:12px 14px; margin-bottom:10px; }
   .job.new { background:var(--new); border-color:var(--accent); }
-  .job.done, .job.down { opacity:.6; }
+  .job.done, .job.down { opacity:.72; }
   .job input[type=checkbox] { width:22px; height:22px; margin:2px 0 0; flex:none; cursor:pointer; accent-color:var(--accent); }
-  .job .body { flex:1; min-width:0; }
+  .job > div { flex:1; min-width:0; }
   .job a { color:var(--accent); font-weight:600; text-decoration:none; }
   .job a:hover { text-decoration:underline; }
-  .job p { margin:2px 0 0; color:var(--muted); font-size:.92rem; }
-  .badge { color:var(--accent); font-size:.85rem; margin-top:2px; }
-  .thumbs { display:flex; gap:6px; flex:none; }
-  .thumbs button { font-size:1.05rem; line-height:1; padding:6px 8px; background:transparent; border:1px solid var(--line); border-radius:6px; cursor:pointer; opacity:.55; }
-  .thumbs button[aria-pressed=true] { opacity:1; border-color:var(--accent); background:var(--new); }
-  .links { margin:0 0 14px; color:var(--muted); font-size:.92rem; }
-  .links a { color:var(--accent); }
+  .job p { margin:2px 0 0; color:var(--muted); font-size:.95rem; }
   .empty { color:var(--muted); }
+  .badge { color:var(--accent); font-size:.9rem; margin-top:2px; }
+  .thumbs { display:flex; gap:6px; }
+  .job > .thumbs { flex:none; }
+  .thumbs button { font-size:1.05rem; line-height:1; padding:6px 8px; background:transparent; border:1px solid var(--line); border-radius:6px; cursor:pointer; opacity:.7; }
+  .thumbs button[aria-pressed=true] { opacity:1; border-color:var(--accent); background:var(--new); }
+  .links { margin:0 0 14px; color:var(--muted); font-size:.95rem; }
+  .links a { color:var(--accent); }
 </style>
 </head>
 <body>
