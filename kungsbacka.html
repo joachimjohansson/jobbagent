@@ -25,6 +25,8 @@
   .job a { color:var(--accent); font-weight:600; text-decoration:none; }
   .job a:hover { text-decoration:underline; }
   .job p { margin:2px 0 0; color:var(--muted); font-size:.92rem; }
+  .links { margin:0 0 14px; color:var(--muted); font-size:.92rem; }
+  .links a { color:var(--accent); }
   .empty { color:var(--muted); }
 </style>
 </head>
@@ -89,6 +91,7 @@ function render() {
     const p = document.createElement("p");
     const parts = [j.employer, j.place, "Publicerad " + j.published];
     if (j.deadline) parts.push("Sista ansökningsdag " + j.deadline);
+    if (j.source) parts.push("Källa: " + j.source);
     p.textContent = parts.filter(Boolean).join(", ");
     body.append(a, p);
 
