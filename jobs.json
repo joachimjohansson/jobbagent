@@ -1,6 +1,19 @@
 {
- "updated": "2026-10-19T16:11:41+00:00",
+ "updated": "2026-10-20T09:55:27+00:00",
  "jobs": [
+  {
+   "id": "31616395",
+   "title": "Account Manager",
+   "employer": "Randstad AB",
+   "place": "Göteborg",
+   "published": "2026-10-19",
+   "deadline": "2026-11-19",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31616395",
+   "source": "Platsbanken",
+   "found_by": [
+    "innesäljare"
+   ]
+  },
   {
    "id": "31606225",
    "title": "Innesäljare",
@@ -207,19 +220,6 @@
    "source": "Platsbanken",
    "found_by": [
     "teknisk säljare"
-   ]
-  },
-  {
-   "id": "31553486",
-   "title": "HSE Engineer, Customer Projects and Sites",
-   "employer": "Valmet Aktiebolag",
-   "place": "Göteborg",
-   "published": "2026-10-05",
-   "deadline": "2026-10-19",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31553486",
-   "source": "Platsbanken",
-   "found_by": [
-    "technical sales"
    ]
   },
   {
