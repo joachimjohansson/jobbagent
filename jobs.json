@@ -1,6 +1,45 @@
 {
- "updated": "2026-10-21T09:58:35+00:00",
+ "updated": "2026-10-22T09:58:45+00:00",
  "jobs": [
+  {
+   "id": "31630270",
+   "title": "Sales Advisor - Deltid",
+   "employer": "Kraftsam Rekrytering & Bemanning AB",
+   "place": "Göteborg",
+   "published": "2026-10-22",
+   "deadline": "2026-11-22",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31630270",
+   "source": "Platsbanken",
+   "found_by": [
+    "innesäljare"
+   ]
+  },
+  {
+   "id": "31629893",
+   "title": "Säljare till Outbound Sales - extrajobb",
+   "employer": "Kvdbil AB",
+   "place": "Göteborg",
+   "published": "2026-10-22",
+   "deadline": "2027-04-20",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31629893",
+   "source": "Platsbanken",
+   "found_by": [
+    "innesäljare"
+   ]
+  },
+  {
+   "id": "31628929",
+   "title": "Senior Cloud Developer",
+   "employer": "Framna Sweden AB",
+   "place": "Göteborg",
+   "published": "2026-10-21",
+   "deadline": "2027-04-19",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31628929",
+   "source": "Platsbanken",
+   "found_by": [
+    "technical sales"
+   ]
+  },
   {
    "id": "31616395",
    "title": "Account Manager",
@@ -393,19 +432,6 @@
    ]
   },
   {
-   "id": "31449631",
-   "title": "Teknisk säljare till Heidelberg Materials",
-   "employer": "Bravura Sverige AB",
-   "place": "Göteborg",
-   "published": "2026-09-08",
-   "deadline": "2027-03-07",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31449631",
-   "source": "Platsbanken",
-   "found_by": [
-    "teknisk säljare"
-   ]
-  },
-  {
    "id": "31434684",
    "title": "Senior teknisk säljare – EEC, Kungsbacka",
    "employer": "Euro Energy Components AB",
@@ -440,19 +466,6 @@
    "published": "2026-08-25",
    "deadline": "2027-02-21",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31393077",
-   "source": "Platsbanken",
-   "found_by": [
-    "technical sales"
-   ]
-  },
-  {
-   "id": "31390931",
-   "title": "Pre Sales Solutioner Automotive",
-   "employer": "Capgemini Engineering Sverige AB",
-   "place": "Göteborg",
-   "published": "2026-08-24",
-   "deadline": "2026-12-01",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31390931",
    "source": "Platsbanken",
    "found_by": [
     "technical sales"
