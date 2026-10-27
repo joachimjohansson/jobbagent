@@ -1,6 +1,32 @@
 {
- "updated": "2026-10-26T10:55:40+00:00",
+ "updated": "2026-10-27T10:19:33+00:00",
  "jobs": [
+  {
+   "id": "31648096",
+   "title": "Teknisk Säljare till Teckentrup Scandinavia AB",
+   "employer": "Experis AB",
+   "place": "Göteborg",
+   "published": "2026-10-27",
+   "deadline": "2026-12-06",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31648096",
+   "source": "Platsbanken",
+   "found_by": [
+    "teknisk säljare"
+   ]
+  },
+  {
+   "id": "31644884",
+   "title": "Kundrådgivare till en av Sveriges bästa arbetsplatser",
+   "employer": "Key Solutions AB",
+   "place": "Kungsbacka",
+   "published": "2026-10-26",
+   "deadline": "2026-11-08",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31644884",
+   "source": "Platsbanken",
+   "found_by": [
+    "innesäljare"
+   ]
+  },
   {
    "id": "31638112",
    "title": "Sales Engineer – Teknisk säljare till WAM Scandinavia",
@@ -484,19 +510,6 @@
    "source": "Platsbanken",
    "found_by": [
     "innesäljare"
-   ]
-  },
-  {
-   "id": "31393077",
-   "title": "Key Account Manager to Cellectricon",
-   "employer": "Bravura Sverige AB",
-   "place": "Göteborg",
-   "published": "2026-08-25",
-   "deadline": "2027-02-21",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31393077",
-   "source": "Platsbanken",
-   "found_by": [
-    "technical sales"
    ]
   },
   {
