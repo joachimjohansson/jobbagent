@@ -1,6 +1,19 @@
 {
- "updated": "2026-10-27T10:19:33+00:00",
+ "updated": "2026-10-28T11:11:08+00:00",
  "jobs": [
+  {
+   "id": "31654975",
+   "title": "FLEXBAR söker innesäljare  med världen som marknad",
+   "employer": "FLEXBAR AB",
+   "place": "Göteborg",
+   "published": "2026-10-28",
+   "deadline": "2026-11-15",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31654975",
+   "source": "Platsbanken",
+   "found_by": [
+    "innesäljare"
+   ]
+  },
   {
    "id": "31648096",
    "title": "Teknisk Säljare till Teckentrup Scandinavia AB",
@@ -15,6 +28,19 @@
    ]
   },
   {
+   "id": "31650946",
+   "title": "Product Owner - Developer Experience",
+   "employer": "Volvo Personvagnar Aktiebolag",
+   "place": "Göteborg",
+   "published": "2026-10-27",
+   "deadline": "2026-11-06",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31650946",
+   "source": "Platsbanken",
+   "found_by": [
+    "technical sales"
+   ]
+  },
+  {
    "id": "31644884",
    "title": "Kundrådgivare till en av Sveriges bästa arbetsplatser",
    "employer": "Key Solutions AB",
@@ -25,21 +51,6 @@
    "source": "Platsbanken",
    "found_by": [
     "innesäljare"
-   ]
-  },
-  {
-   "id": "31638112",
-   "title": "Sales Engineer – Teknisk säljare till WAM Scandinavia",
-   "employer": "Arena Personal Sverige AB",
-   "place": "Göteborg",
-   "published": "2026-10-23",
-   "deadline": "2026-10-30",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31638112",
-   "source": "Platsbanken",
-   "found_by": [
-    "teknisk säljare",
-    "sales engineer",
-    "inside sales"
    ]
   },
   {
@@ -290,19 +301,6 @@
    ]
   },
   {
-   "id": "31560797",
-   "title": "Lead Engineer Virtual Driver",
-   "employer": "Volvo Business Services Aktiebolag",
-   "place": "Göteborg",
-   "published": "2026-10-06",
-   "deadline": "2026-10-27",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31560797",
-   "source": "Platsbanken",
-   "found_by": [
-    "technical sales"
-   ]
-  },
-  {
    "id": "31560979",
    "title": "Hälsorådgivare / Säljare & Personlig Tränare Eriksberg",
    "employer": "Sveavägens Hälsa & Motion AB",
@@ -339,19 +337,6 @@
    "source": "Platsbanken",
    "found_by": [
     "innesäljare"
-   ]
-  },
-  {
-   "id": "31550144",
-   "title": "Senior Business Analyst - PLM Digital Thread",
-   "employer": "Hykmann Global Business Solutions AB",
-   "place": "Göteborg",
-   "published": "2026-10-03",
-   "deadline": "2026-11-02",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31550144",
-   "source": "Platsbanken",
-   "found_by": [
-    "technical sales"
    ]
   },
   {
