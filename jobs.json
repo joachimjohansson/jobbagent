@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T11:16:04+00:00",
+ "updated": "2026-10-31T10:49:42+00:00",
  "jobs": [
   {
    "id": "31665719",
@@ -13,6 +13,19 @@
    "found_by": [
     "teknisk säljare",
     "technical sales"
+   ]
+  },
+  {
+   "id": "31667215",
+   "title": "Innesäljare",
+   "employer": "Kraftsam Rekrytering & Bemanning AB",
+   "place": "Göteborg",
+   "published": "2026-10-30",
+   "deadline": "2026-11-21",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31667215",
+   "source": "Platsbanken",
+   "found_by": [
+    "innesäljare"
    ]
   },
   {
@@ -49,19 +62,6 @@
    "published": "2026-10-30",
    "deadline": "2026-11-22",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31665011",
-   "source": "Platsbanken",
-   "found_by": [
-    "innesäljare"
-   ]
-  },
-  {
-   "id": "31665007",
-   "title": "Innesäljare",
-   "employer": "Kraftsam Rekrytering & Bemanning AB",
-   "place": "Göteborg",
-   "published": "2026-10-30",
-   "deadline": "2026-11-22",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31665007",
    "source": "Platsbanken",
    "found_by": [
     "innesäljare"
@@ -533,19 +533,6 @@
    "source": "Platsbanken",
    "found_by": [
     "teknisk säljare",
-    "innesäljare"
-   ]
-  },
-  {
-   "id": "31398708",
-   "title": "Rubrik: Erfaren B2B/B2C-mötesbokare & säljare",
-   "employer": "CHUOMO SERVICE AB",
-   "place": "Göteborg",
-   "published": "2026-08-26",
-   "deadline": "2026-10-30",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31398708",
-   "source": "Platsbanken",
-   "found_by": [
     "innesäljare"
    ]
   },
