@@ -34,6 +34,13 @@
   .job a { color:var(--accent); font-weight:600; text-decoration:none; }
   .job a:hover { text-decoration:underline; }
   .job p { margin:2px 0 0; color:var(--muted); font-size:.95rem; }
+  .sok { display:flex; flex-direction:column; align-items:center; gap:2px; flex:none; font-size:.8rem; color:var(--muted); cursor:pointer; }
+  .sok input { margin:0 !important; }
+  .actions { display:flex; flex-wrap:wrap; gap:4px 16px; margin-top:6px; font-size:.95rem; }
+  .job .actions a { font-weight:400; }
+  .actions button { font:inherit; color:var(--accent); background:none; border:0; padding:0; cursor:pointer; text-decoration:underline; }
+  .status { color:var(--muted); margin:-6px 0 12px; font-size:.95rem; }
+  .status:empty { display:none; }
   .empty { color:var(--muted); }
   .badge { color:var(--accent); font-size:.9rem; margin-top:2px; }
   .thumbs { display:flex; gap:6px; }
@@ -56,6 +63,7 @@
     <button id="export" type="button">Kopiera mina betyg</button>
     <span id="count"></span>
   </div>
+  <p class="status" id="status" role="status"></p>
   <div id="list"></div>
 </main>
 <script>
@@ -87,6 +95,30 @@ function weights() {
   const w = {};
   for (const r of Object.values(ratings)) for (const t of tokens(r.t, r.e)) w[t] = (w[t] || 0) + r.v;
   return w;
+}
+
+// Ansökningsflödet: öppnar en ny chatt i projektet Jobbsökning med färdig prompt.
+const CLAUDE_PROJECT = "01a142e1-be39-7253-a6c2-2ac03bb49ee3";
+function applicationPrompt(j) {
+  const rows = ["Titel: " + j.title, "Företag: " + j.employer, "Ort: " + j.place];
+  if (j.deadline) rows.push("Sista ansökningsdag: " + j.deadline);
+  rows.push("Annons: " + j.url);
+  return "Skapa ansökningshandlingar (CV och personligt brev) för det här jobbet.\n\n" + rows.join("\n") +
+    "\n\nLäs annonsen via länken och följ projektets instruktioner. Om annonsen inte går att läsa, be mig klistra in texten.";
+}
+function claudeUrl(j) {
+  return "https://claude.ai/new?project=" + CLAUDE_PROJECT + "&q=" + encodeURIComponent(applicationPrompt(j));
+}
+function copyPrompt(j, msg) {
+  const status = document.getElementById("status");
+  navigator.clipboard.writeText(applicationPrompt(j))
+    .then(() => { status.textContent = msg || "Prompten är kopierad. Klistra in den i projektet Jobbsökning."; })
+    .catch(() => window.prompt("Kopiera prompten:", applicationPrompt(j)));
+}
+function startApplication(j) {
+  const w = window.open(claudeUrl(j), "_blank");
+  if (w) w.opener = null;
+  else copyPrompt(j, "Webbläsaren blockerade den nya fliken. Prompten är kopierad: öppna projektet Jobbsökning i Claude och klistra in den.");
 }
 
 function rate(job, v) {
@@ -137,12 +169,17 @@ function render() {
     const box = document.createElement("input");
     box.type = "checkbox";
     box.checked = applied.has(j.id);
-    box.setAttribute("aria-label", "Markera som sökt: " + j.title);
+    box.setAttribute("aria-label", "Sök jobbet och starta ansökan: " + j.title);
     box.addEventListener("change", () => {
-      if (box.checked) applied.add(j.id); else applied.delete(j.id);
+      if (box.checked) { applied.add(j.id); startApplication(j); } else applied.delete(j.id);
       save();
       render();
     });
+    const sok = document.createElement("label");
+    sok.className = "sok";
+    const sokText = document.createElement("span");
+    sokText.textContent = "Sök";
+    sok.append(box, sokText);
 
     const body = document.createElement("div");
     body.className = "body";
@@ -164,6 +201,19 @@ function render() {
       body.append(b);
     }
 
+    if (applied.has(j.id)) {
+      const act = document.createElement("div");
+      act.className = "actions";
+      const open = document.createElement("a");
+      open.href = claudeUrl(j); open.target = "_blank"; open.rel = "noopener";
+      open.textContent = "Öppna ansökan i Claude";
+      const copy = document.createElement("button");
+      copy.type = "button"; copy.textContent = "Kopiera prompt";
+      copy.addEventListener("click", () => copyPrompt(j));
+      act.append(open, copy);
+      body.append(act);
+    }
+
     const thumbs = document.createElement("div");
     thumbs.className = "thumbs";
     for (const [v, icon, label] of [[1, "👍", "Tummen upp"], [-1, "👎", "Tummen ner"]]) {
@@ -176,7 +226,7 @@ function render() {
       thumbs.append(btn);
     }
 
-    div.append(box, body, thumbs);
+    div.append(sok, body, thumbs);
     list.append(div);
   }
 }
