@@ -1,6 +1,19 @@
 {
- "updated": "2026-11-06T12:49:26+00:00",
+ "updated": "2026-11-07T11:37:49+00:00",
  "jobs": [
+  {
+   "id": "31699556",
+   "title": "Teknisk säljare inom fabriksbetong",
+   "employer": "Swerock Aktiebolag",
+   "place": "Göteborg",
+   "published": "2026-11-06",
+   "deadline": "2026-11-29",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31699556",
+   "source": "Platsbanken",
+   "found_by": [
+    "teknisk säljare"
+   ]
+  },
   {
    "id": "31696887",
    "title": "Power BI Developer - Temporary Cover",
@@ -25,6 +38,19 @@
    "source": "Platsbanken",
    "found_by": [
     "technical sales"
+   ]
+  },
+  {
+   "id": "31697630",
+   "title": "Innesäljare",
+   "employer": "Kraftsam Rekrytering & Bemanning AB",
+   "place": "Göteborg",
+   "published": "2026-11-06",
+   "deadline": "2026-12-06",
+   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31697630",
+   "source": "Platsbanken",
+   "found_by": [
+    "innesäljare"
    ]
   },
   {
@@ -198,19 +224,6 @@
    ]
   },
   {
-   "id": "31667215",
-   "title": "Innesäljare",
-   "employer": "Kraftsam Rekrytering & Bemanning AB",
-   "place": "Göteborg",
-   "published": "2026-10-30",
-   "deadline": "2026-11-21",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31667215",
-   "source": "Platsbanken",
-   "found_by": [
-    "innesäljare"
-   ]
-  },
-  {
    "id": "31665939",
    "title": "B2B-SÄLJARE | Göteborg | LÖN UTAN TAK",
    "employer": "BTLK AB",
@@ -299,19 +312,6 @@
    "source": "Platsbanken",
    "found_by": [
     "teknisk säljare"
-   ]
-  },
-  {
-   "id": "31650946",
-   "title": "Product Owner - Developer Experience",
-   "employer": "Volvo Personvagnar Aktiebolag",
-   "place": "Göteborg",
-   "published": "2026-10-27",
-   "deadline": "2026-11-06",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31650946",
-   "source": "Platsbanken",
-   "found_by": [
-    "technical sales"
    ]
   },
   {
@@ -452,19 +452,6 @@
    "published": "2026-10-11",
    "deadline": "2026-11-10",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31581138",
-   "source": "Platsbanken",
-   "found_by": [
-    "innesäljare"
-   ]
-  },
-  {
-   "id": "31579770",
-   "title": "Innesäljare till S:t Eriks i Göteborg",
-   "employer": "StudentConsulting Sweden AB (publ)",
-   "place": "Göteborg",
-   "published": "2026-10-09",
-   "deadline": "2026-11-06",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31579770",
    "source": "Platsbanken",
    "found_by": [
     "innesäljare"
