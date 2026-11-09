@@ -240,12 +240,25 @@ document.getElementById("links").innerHTML = "Sök själv: " +
   '<a href="https://se.indeed.com/jobs?q=' + encodeURIComponent(inQuery) + '&l=' + encodeURIComponent("Göteborg") + '&sort=date" target="_blank" rel="noopener">Indeed</a>';
 // LINKS-END
 
-fetch("jobs.json")
-  .then(r => r.json())
-  .then(d => {
-    data = d;
+// LinkedIn-jobb från aviseringar i Gmail (linkedin.json). Bara dessa aviseringar visas:
+const LI_ALERTS = ["Säljingenjör"];
+function loadLinkedIn() {
+  return fetch("linkedin.json").then(r => r.json()).then(d => ({
+    updated: d.updated,
+    jobs: d.jobs.filter(j => LI_ALERTS.includes(j.alert)).map(j => ({
+      id: "li-" + j.id, title: j.title, employer: j.company, place: j.location,
+      published: j.received, url: j.url, source: "LinkedIn"
+    }))
+  })).catch(() => ({ updated: null, jobs: [] }));
+}
+
+Promise.all([fetch("jobs.json").then(r => r.json()), loadLinkedIn()])
+  .then(([d, li]) => {
+    const seen = new Set(d.jobs.map(j => j.id));
+    data = { ...d, jobs: d.jobs.concat(li.jobs.filter(j => !seen.has(j.id))) };
     const when = new Date(d.updated).toLocaleString("sv-SE", { dateStyle: "long", timeStyle: "short" });
-    meta.textContent = d.jobs.length + " jobb. Uppdaterad " + when + ". Nya jobb (senaste två dagarna) har blå bakgrund.";
+    meta.textContent = data.jobs.length + " jobb (varav " + li.jobs.length + " från LinkedIn" +
+      (li.updated ? ", uppdaterat " + li.updated : "") + "). Uppdaterad " + when + ". Nya jobb (senaste två dagarna) har blå bakgrund.";
     render();
   })
   .catch(() => { meta.textContent = "Kunde inte läsa jobs.json. Kör uppdateringen under Actions först."; });
