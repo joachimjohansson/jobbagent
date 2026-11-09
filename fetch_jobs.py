@@ -72,7 +72,7 @@ def same_job(job):
 
 def build(filename, profile):
     jobs = {}
-    seen = set()
+    by_key = {}   # (rubrik, arbetsgivare) -> id, för att känna igen samma annons hos flera källor
     failed = 0
 
     for query in profile["searches"]:
@@ -98,10 +98,11 @@ def build(filename, profile):
                 "deadline": (hit.get("application_deadline") or "")[:10],
                 "url": hit.get("webpage_url") or "",
                 "source": "Platsbanken",
+                "sources": [{"name": "Platsbanken", "url": hit.get("webpage_url") or ""}],
                 "found_by": [query],
             }
             jobs[job_id] = job
-            seen.add(same_job(job))
+            by_key.setdefault(same_job(job), job_id)
 
     if failed == len(profile["searches"]):
         print(f"[{filename}] Alla Platsbanken-sökningar misslyckades, filen lämnas oförändrad.")
@@ -129,13 +130,18 @@ def build(filename, profile):
                     "deadline": "",
                     "url": hit.get("link") or "",
                     "source": "Jooble",
+                    "sources": [{"name": "Jooble", "url": hit.get("link") or ""}],
                     "found_by": [query],
                 }
                 if not job["url"]:
                     continue
-                if same_job(job) in seen:
-                    continue  # samma annons finns redan (ofta från Platsbanken)
-                seen.add(same_job(job))
+                existing = jobs.get(by_key.get(same_job(job)))
+                if existing:
+                    # Samma annons finns redan (ofta från Platsbanken): lägg till Jooble som källa.
+                    if not any(x["name"] == "Jooble" for x in existing["sources"]):
+                        existing["sources"].append({"name": "Jooble", "url": job["url"]})
+                    continue
+                by_key[same_job(job)] = job["id"]
                 jobs[job["id"]] = job
                 added += 1
             print(f"[{filename}] Jooble '{query}': {len(hits)} träffar, {added} nya")

@@ -47,6 +47,8 @@
   .job > .thumbs { flex:none; }
   .thumbs button { font-size:1.05rem; line-height:1; padding:6px 8px; background:transparent; border:1px solid var(--line); border-radius:6px; cursor:pointer; opacity:.7; }
   .thumbs button[aria-pressed=true] { opacity:1; border-color:var(--accent); background:var(--new); }
+  .src { margin:2px 0 0; color:var(--muted); font-size:.95rem; }
+  .src a { color:var(--accent); font-weight:400; }
   .links { margin:0 0 14px; color:var(--muted); font-size:.95rem; }
   .links a { color:var(--accent); }
 </style>
@@ -121,9 +123,14 @@ function startApplication(j) {
   else copyPrompt(j, "Webbläsaren blockerade den nya fliken. Prompten är kopierad: öppna projektet Jobbsökning i Claude och klistra in den.");
 }
 
+function idsOf(j) { return [j.id].concat(j.altIds || []); }
+function isApplied(j) { return idsOf(j).some(id => applied.has(id)); }
+function myRating(j) { for (const id of idsOf(j)) if (ratings[id]) return ratings[id].v; return 0; }
+
 function rate(job, v) {
-  if (ratings[job.id] && ratings[job.id].v === v) delete ratings[job.id];
-  else ratings[job.id] = { v, t: job.title, e: job.employer, p: job.place };
+  const cur = myRating(job);
+  for (const id of idsOf(job)) delete ratings[id];
+  if (cur !== v) ratings[job.id] = { v, t: job.title, e: job.employer, p: job.place };
   saveRatings();
   render();
 }
@@ -143,12 +150,12 @@ function render() {
   const ready = Object.keys(ratings).length >= 4;
 
   const jobs = data.jobs.filter(j =>
-    (j.title + " " + j.employer + " " + j.place).toLowerCase().includes(q) &&
-    !(hide && (applied.has(j.id) || (ratings[j.id] && ratings[j.id].v === -1)))
+    (j.title + " " + j.employer + " " + j.place + " " + j.sources.map(x => x.name).join(" ")).toLowerCase().includes(q) &&
+    !(hide && (isApplied(j) || myRating(j) === -1))
   );
   for (const j of jobs) {
     j._s = ready ? tokens(j.title, j.employer).reduce((s, t) => s + (w[t] || 0), 0) : 0;
-    j._r = ratings[j.id] && ratings[j.id].v === -1 ? -1000 : j._s;
+    j._r = myRating(j) === -1 ? -1000 : j._s;
   }
   if (sortBy === "match") jobs.sort((a, b) => (b._r - a._r) || b.published.localeCompare(a.published));
   else if (sortBy === "deadline") jobs.sort((a, b) =>
@@ -162,16 +169,16 @@ function render() {
     return;
   }
   for (const j of jobs) {
-    const my = ratings[j.id] ? ratings[j.id].v : 0;
+    const my = myRating(j);
     const div = document.createElement("div");
-    div.className = "job" + (isNew(j) ? " new" : "") + (applied.has(j.id) ? " done" : "") + (my === -1 ? " down" : "");
+    div.className = "job" + (isNew(j) ? " new" : "") + (isApplied(j) ? " done" : "") + (my === -1 ? " down" : "");
 
     const box = document.createElement("input");
     box.type = "checkbox";
-    box.checked = applied.has(j.id);
+    box.checked = isApplied(j);
     box.setAttribute("aria-label", "Sök jobbet och starta ansökan: " + j.title);
     box.addEventListener("change", () => {
-      if (box.checked) { applied.add(j.id); startApplication(j); } else applied.delete(j.id);
+      if (box.checked) { applied.add(j.id); startApplication(j); } else idsOf(j).forEach(id => applied.delete(id));
       save();
       render();
     });
@@ -188,9 +195,19 @@ function render() {
     const p = document.createElement("p");
     const parts = [j.employer, j.place, "Publicerad " + j.published];
     if (j.deadline) parts.push("Sista ansökningsdag " + j.deadline);
-    if (j.source) parts.push("Källa: " + j.source);
     p.textContent = parts.filter(Boolean).join(", ");
-    body.append(a, p);
+    const src = document.createElement("p");
+    src.className = "src";
+    src.append("Annonsen finns hos: ");
+    j.sources.forEach((x, i) => {
+      if (i) src.append(" · ");
+      if (x.url) {
+        const l = document.createElement("a");
+        l.href = x.url; l.target = "_blank"; l.rel = "noopener"; l.textContent = x.name;
+        src.append(l);
+      } else src.append(x.name);
+    });
+    body.append(a, p, src);
     if (ready && !my && j._s >= 2) {
       const b = document.createElement("div");
       b.className = "badge"; b.textContent = "Liknar jobb du har gillat";
@@ -201,7 +218,7 @@ function render() {
       body.append(b);
     }
 
-    if (applied.has(j.id)) {
+    if (isApplied(j)) {
       const act = document.createElement("div");
       act.className = "actions";
       const open = document.createElement("a");
@@ -240,25 +257,65 @@ document.getElementById("links").innerHTML = "Sök själv: " +
   '<a href="https://se.indeed.com/jobs?q=' + encodeURIComponent(inQuery) + '&l=' + encodeURIComponent("Göteborg") + '&sort=date" target="_blank" rel="noopener">Indeed</a>';
 // LINKS-END
 
-// LinkedIn-jobb från aviseringar i Gmail (linkedin.json). Bara dessa aviseringar visas:
-const LI_ALERTS = ["Säljingenjör"];
-function loadLinkedIn() {
-  return fetch("linkedin.json").then(r => r.json()).then(d => ({
+// Jobb från e-postaviseringar (Gmail): linkedin.json och jooble-epost.json.
+const LI_ALERTS = ["Säljingenjör"];   // LinkedIn-aviseringar som visas
+function loadFeed(file, name, pick) {
+  return fetch(file).then(r => r.json()).then(d => ({
     updated: d.updated,
-    jobs: d.jobs.filter(j => LI_ALERTS.includes(j.alert)).map(j => ({
-      id: "li-" + j.id, title: j.title, employer: j.company, place: j.location,
-      published: j.received, url: j.url, source: "LinkedIn"
+    jobs: d.jobs.filter(pick).map(j => ({
+      id: (name === "LinkedIn" ? "li-" : "jooble-") + j.id, title: j.title, employer: j.company, place: j.location,
+      published: j.received, url: j.url, source: name
     }))
   })).catch(() => ({ updated: null, jobs: [] }));
 }
 
-Promise.all([fetch("jobs.json").then(r => r.json()), loadLinkedIn()])
-  .then(([d, li]) => {
-    const seen = new Set(d.jobs.map(j => j.id));
-    data = { ...d, jobs: d.jobs.concat(li.jobs.filter(j => !seen.has(j.id))) };
+// Samma annons på flera ställen slås ihop. Matchning: samma arbetsgivare och lika rubrik.
+const LEGAL = new Set(["ab", "aktiebolag", "gmbh", "plc", "corporation", "corp", "inc", "ltd", "group", "sverige", "sweden", "the"]);
+function normWords(s) {
+  return (s || "").normalize("NFKC").toLowerCase().split(/[^a-zåäö0-9]+/).filter(w => w);
+}
+function employerKey(s) { return normWords(s).filter(w => !LEGAL.has(w)).join(" "); }
+function similarTitle(a, b) {
+  const x = new Set(normWords(a)), y = new Set(normWords(b));
+  if (!x.size || !y.size) return false;
+  let both = 0;
+  for (const w of x) if (y.has(w)) both++;
+  return both / (x.size + y.size - both) >= 0.7;
+}
+function addSource(job, name, url) {
+  if (!job.sources.some(s => s.name === name)) job.sources.push({ name, url });
+}
+function mergeJobs(list) {
+  const out = [];
+  for (const j of list) {
+    j.sources = (j.sources && j.sources.length) ? j.sources.slice() : [{ name: j.source, url: j.url }];
+    const ek = employerKey(j.employer);
+    // Två annonser från samma källa slås aldrig ihop (kan vara olika tjänster hos samma företag).
+    const overlap = o => j.sources.some(s => o.sources.some(t => t.name === s.name));
+    const hit = out.find(o => o.id === j.id || (!overlap(o) && ek && employerKey(o.employer) === ek && similarTitle(o.title, j.title)));
+    if (!hit) { j.altIds = []; out.push(j); continue; }
+    if (hit.id !== j.id) hit.altIds.push(j.id);
+    for (const s of j.sources) addSource(hit, s.name, s.url);
+    if (j.published && (!hit.published || j.published < hit.published)) hit.published = j.published;
+    if (!hit.deadline && j.deadline) hit.deadline = j.deadline;
+  }
+  return out;
+}
+
+Promise.all([
+  fetch("jobs.json").then(r => r.json()),
+  loadFeed("linkedin.json", "LinkedIn", j => LI_ALERTS.includes(j.alert)),
+  loadFeed("jooble-epost.json", "Jooble", () => true)
+]).then(([d, li, jo]) => {
+    data = { ...d, jobs: mergeJobs(d.jobs.concat(li.jobs, jo.jobs)) };
+    const counts = {};
+    for (const j of data.jobs) for (const s of j.sources) counts[s.name] = (counts[s.name] || 0) + 1;
     const when = new Date(d.updated).toLocaleString("sv-SE", { dateStyle: "long", timeStyle: "short" });
-    meta.textContent = data.jobs.length + " jobb (varav " + li.jobs.length + " från LinkedIn" +
-      (li.updated ? ", uppdaterat " + li.updated : "") + "). Uppdaterad " + when + ". Nya jobb (senaste två dagarna) har blå bakgrund.";
+    meta.textContent = data.jobs.length + " jobb. Källor: " +
+      Object.entries(counts).map(([k, v]) => k + " " + v).join(", ") +
+      " (en annons kan finnas hos flera). Uppdaterad " + when +
+      (li.updated ? "; LinkedIn-mejl " + li.updated : "") + (jo.updated ? "; Jooble-mejl " + jo.updated : "") +
+      ". Nya jobb (senaste två dagarna) har blå bakgrund.";
     render();
   })
   .catch(() => { meta.textContent = "Kunde inte läsa jobs.json. Kör uppdateringen under Actions först."; });
