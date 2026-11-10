@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T13:44:09+00:00",
+ "updated": "2026-11-10T13:23:15+00:00",
  "jobs": [
   {
    "id": "31704075",
@@ -10,6 +10,12 @@
    "deadline": "2026-11-22",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31704075",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31704075"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -23,6 +29,12 @@
    "deadline": "2026-12-06",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31703172",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31703172"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -36,6 +48,12 @@
    "deadline": "2026-12-09",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31703109",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31703109"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -49,6 +67,12 @@
    "deadline": "2026-11-29",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31699556",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31699556"
+    }
+   ],
    "found_by": [
     "teknisk säljare"
    ]
@@ -62,6 +86,12 @@
    "deadline": "2026-11-20",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31696887",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31696887"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -75,6 +105,12 @@
    "deadline": "2027-05-05",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31693803",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31693803"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -88,6 +124,12 @@
    "deadline": "2026-12-06",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31697630",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31697630"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -101,6 +143,12 @@
    "deadline": "2026-12-06",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31694163",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31694163"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -114,6 +162,12 @@
    "deadline": "2026-12-06",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31694033",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31694033"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -127,21 +181,14 @@
    "deadline": "2027-05-04",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31688538",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31688538"
+    }
+   ],
    "found_by": [
     "sales engineer"
-   ]
-  },
-  {
-   "id": "31689534",
-   "title": "Säljare till nytt AI-baserat kundservicesystem (Norge)",
-   "employer": "Flowtel Nordic AB",
-   "place": "Göteborg",
-   "published": "2026-11-05",
-   "deadline": "2026-12-05",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31689534",
-   "source": "Platsbanken",
-   "found_by": [
-    "innesäljare"
    ]
   },
   {
@@ -153,6 +200,12 @@
    "deadline": "2026-11-30",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31688043",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31688043"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -166,6 +219,12 @@
    "deadline": "2026-11-30",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31687902",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31687902"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -179,6 +238,12 @@
    "deadline": "2026-11-30",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31687738",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31687738"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -192,6 +257,12 @@
    "deadline": "2026-11-23",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31684604",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31684604"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -205,6 +276,12 @@
    "deadline": "2027-05-02",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31678070",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31678070"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -218,6 +295,12 @@
    "deadline": "2026-12-31",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31680390",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31680390"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -231,6 +314,12 @@
    "deadline": "2026-11-12",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31671789",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31671789"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -244,6 +333,12 @@
    "deadline": "2026-11-26",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31651545",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31651545"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -257,6 +352,12 @@
    "deadline": "2026-11-29",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31665719",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31665719"
+    }
+   ],
    "found_by": [
     "teknisk säljare",
     "technical sales"
@@ -271,6 +372,12 @@
    "deadline": "2027-04-28",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31665939",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31665939"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -284,6 +391,12 @@
    "deadline": "2026-11-29",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31665408",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31665408"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -297,19 +410,12 @@
    "deadline": "2026-11-28",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31663633",
    "source": "Platsbanken",
-   "found_by": [
-    "technical sales"
-   ]
-  },
-  {
-   "id": "31663300",
-   "title": "Product Manager – Gas Systems",
-   "employer": "Consilium Safety Group AB",
-   "place": "Göteborg",
-   "published": "2026-10-29",
-   "deadline": "2027-04-27",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31663300",
-   "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31663633"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -323,6 +429,12 @@
    "deadline": "2026-11-22",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31659907",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31659907"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -336,6 +448,12 @@
    "deadline": "2026-11-15",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31654975",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31654975"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -349,6 +467,12 @@
    "deadline": "2026-12-06",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31648096",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31648096"
+    }
+   ],
    "found_by": [
     "teknisk säljare"
    ]
@@ -362,6 +486,12 @@
    "deadline": "2026-11-20",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31636687",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31636687"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -375,6 +505,12 @@
    "deadline": "2026-11-15",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31636483",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31636483"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -388,6 +524,12 @@
    "deadline": "2026-11-22",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31635040",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31635040"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -401,6 +543,12 @@
    "deadline": "2027-04-20",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31629893",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31629893"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -414,6 +562,12 @@
    "deadline": "2027-04-19",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31628929",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31628929"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -427,6 +581,12 @@
    "deadline": "2026-11-19",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31616395",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31616395"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -440,6 +600,12 @@
    "deadline": "2026-11-13",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31596127",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31596127"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -453,6 +619,12 @@
    "deadline": "2026-11-13",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31584455",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31584455"
+    }
+   ],
    "found_by": [
     "teknisk säljare"
    ]
@@ -466,6 +638,12 @@
    "deadline": "2026-11-10",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31581138",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31581138"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -479,6 +657,12 @@
    "deadline": "2026-11-30",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31569020",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31569020"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -492,6 +676,12 @@
    "deadline": "2027-01-07",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31571296",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31571296"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -505,6 +695,12 @@
    "deadline": "2027-04-04",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31560979",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31560979"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -518,6 +714,12 @@
    "deadline": "2027-04-03",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31555536",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31555536"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -531,6 +733,12 @@
    "deadline": "2026-11-27",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31529414",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31529414"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -544,6 +752,12 @@
    "deadline": "2026-11-15",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31510825",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31510825"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -557,6 +771,12 @@
    "deadline": "2026-11-12",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31478076",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31478076"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
@@ -570,6 +790,12 @@
    "deadline": "2027-03-08",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31457415",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31457415"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -583,6 +809,12 @@
    "deadline": "2027-03-02",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31434684",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31434684"
+    }
+   ],
    "found_by": [
     "teknisk säljare",
     "innesäljare"
@@ -597,6 +829,12 @@
    "deadline": "2026-11-25",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31105657",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31105657"
+    }
+   ],
    "found_by": [
     "innesäljare"
    ]
@@ -610,6 +848,12 @@
    "deadline": "2026-11-22",
    "url": "https://arbetsformedlingen.se/platsbanken/annonser/31083679",
    "source": "Platsbanken",
+   "sources": [
+    {
+     "name": "Platsbanken",
+     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31083679"
+    }
+   ],
    "found_by": [
     "technical sales"
    ]
