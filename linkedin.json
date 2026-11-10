@@ -2,42 +2,392 @@
   "updated": "2026-11-10",
   "source": "LinkedIn jobbaviseringar via Gmail",
   "jobs": [
-    {"id": "4443779897", "title": "(Senior) Account Manager (m/f/d)", "company": "Emerson", "location": "Göteborg", "alert": "Säljingenjör", "received": "2026-11-09", "url": "https://www.linkedin.com/jobs/view/4443779897/"},
-    {"id": "4486636851", "title": "Distribution Sales Specialist", "company": "Jefferson Wells Sverige", "location": "Göteborg", "alert": "Säljingenjör", "received": "2026-11-08", "url": "https://www.linkedin.com/jobs/view/4486636851/"},
-    {"id": "4427593192", "title": "Sales Engineer", "company": "Flowserve Corporation", "location": "Göteborg", "alert": "Säljingenjör", "received": "2026-11-08", "url": "https://www.linkedin.com/jobs/view/4427593192/"},
-    {"id": "4434454955", "title": "Account Manager Sweden - Region South", "company": "Master Builders Solutions", "location": "Stor-Göteborg", "alert": "Säljingenjör", "received": "2026-11-08", "url": "https://www.linkedin.com/jobs/view/4434454955/"},
-    {"id": "4486264206", "title": "Teknisk säljare inom fabriksbetong", "company": "Swerock", "location": "Göteborg", "alert": "Säljingenjör", "received": "2026-11-07", "url": "https://www.linkedin.com/jobs/view/4486264206/"},
-    {"id": "4487316569", "title": "Process Vacuum Channel Manager", "company": "Edwards Vacuum", "location": "Stor-Göteborg", "alert": "Säljingenjör", "received": "2026-11-07", "url": "https://www.linkedin.com/jobs/view/4487316569/"},
-    {"id": "4480066962", "title": "Servicetekniker/säljare inom Avbrottsfri kraft till Södra Sverige", "company": "ABB", "location": "Alingsås", "alert": "Säljingenjör", "received": "2026-11-07", "url": "https://www.linkedin.com/jobs/view/4480066962/"},
-    {"id": "4486965680", "title": "Affärsansvarig B2B-säljare inom IT", "company": "Kontorsbemanning AB", "location": "Göteborg", "alert": "Säljingenjör", "received": "2026-11-07", "url": "https://www.linkedin.com/jobs/view/4486965680/"},
-    {"id": "4487644583", "title": "Avdelningschefer till Regionarkivet", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-09", "url": "https://www.linkedin.com/jobs/view/4487644583/"},
-    {"id": "4487643281", "title": "Vikarierande fastighetsvärd till Gamla Järnbrott", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-09", "url": "https://www.linkedin.com/jobs/view/4487643281/"},
-    {"id": "4487641934", "title": "Enhetschef till Bostad med särskild service i Hisingen", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-09", "url": "https://www.linkedin.com/jobs/view/4487641934/"},
-    {"id": "4487629549", "title": "Enhetschef Fritid till Socialförvaltningen Nordost", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-09", "url": "https://www.linkedin.com/jobs/view/4487629549/"},
-    {"id": "4487640916", "title": "Rektor till förskoleförvaltningen, område Centrum", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-09", "url": "https://www.linkedin.com/jobs/view/4487640916/"},
-    {"id": "4487627923", "title": "Biträdande rektor till Taubeskolan F-3", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-09", "url": "https://www.linkedin.com/jobs/view/4487627923/"},
-    {"id": "4486651389", "title": "Teknisk Servicechef", "company": "Jefferson Wells Sverige", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-08", "url": "https://www.linkedin.com/jobs/view/4486651389/"},
-    {"id": "4487622388", "title": "Avdelningschef Ekonomi & inköp", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-08", "url": "https://www.linkedin.com/jobs/view/4487622388/"},
-    {"id": "4477718104", "title": "Arbetsledare till Peab Drift och Underhåll", "company": "Peab", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-08", "url": "https://www.linkedin.com/jobs/view/4477718104/"},
-    {"id": "4488725457", "title": "Avdelningschef Ekonomi & inköp", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-08", "url": "https://www.linkedin.com/jobs/view/4488725457/"},
-    {"id": "4487366335", "title": "Förvaltningsledare till Regionarkivet i Göteborg", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-07", "url": "https://www.linkedin.com/jobs/view/4487366335/"},
-    {"id": "4488167883", "title": "Förvaltningsledare till Regionarkivet i Göteborg", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-07", "url": "https://www.linkedin.com/jobs/view/4488167883/"},
-    {"id": "4488134033", "title": "Verksamhetsledare till Kompetenscentrum", "company": "Kungälvs kommun", "location": "Kungälv", "alert": "Förvaltare", "received": "2026-11-07", "url": "https://www.linkedin.com/jobs/view/4488134033/"},
-    {"id": "4486224429", "title": "Lokalvårdssamordnare", "company": "Göteborgs universitet", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-07", "url": "https://www.linkedin.com/jobs/view/4486224429/"},
-    {"id": "4486225768", "title": "Sektionschef", "company": "Ragn-Sells", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-07", "url": "https://www.linkedin.com/jobs/view/4486225768/"},
-    {"id": "4486229099", "title": "Servicemedarbetare – Förråd, administration och vaktmästeri", "company": "ISS A/S", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-07", "url": "https://www.linkedin.com/jobs/view/4486229099/"},
-    {"id": "4486767082", "title": "Enhetschef Konsultation till Hjälpmedelscentralen Mölndal", "company": "Västra Götalandsregionen", "location": "Mölndal", "alert": "Förvaltare", "received": "2026-11-06", "url": "https://www.linkedin.com/jobs/view/4486767082/"},
-    {"id": "4483224311", "title": "Systemförvaltare till Drift och underhåll", "company": "Göteborgs Stad", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-06", "url": "https://www.linkedin.com/jobs/view/4483224311/"},
-    {"id": "4486774467", "title": "Housekeeping Manager Room", "company": "Liseberg", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-06", "url": "https://www.linkedin.com/jobs/view/4486774467/"},
-    {"id": "4484831667", "title": "Konsultenhetschef inom Life Cycle Management", "company": "Combitech", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-06", "url": "https://www.linkedin.com/jobs/view/4484831667/"},
-    {"id": "4487725950", "title": "Assistant Store Manager till New Yorker i Nordstan", "company": "NEW YORKER", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-06", "url": "https://www.linkedin.com/jobs/view/4487725950/"},
-    {"id": "4487790372", "title": "Gruppchef Säker och hållbar kemi", "company": "IVL Svenska Miljöinstitutet", "location": "Göteborg", "alert": "Förvaltare", "received": "2026-11-06", "url": "https://www.linkedin.com/jobs/view/4487790372/"},
-    {"id": "4487913129", "title": "Kommunikatör - intern kommunikation", "company": "Västra Götalandsregionen", "location": "Gothenburg", "alert": "communications specialist", "received": "2026-11-10", "url": "https://www.linkedin.com/jobs/view/4487913129/"},
-    {"id": "4487900452", "title": "Account Manager raffinaderi och kemi", "company": "DENSIQ Group", "location": "Gothenburg", "alert": "Säljingenjör", "received": "2026-11-10", "url": "https://www.linkedin.com/jobs/view/4487900452/"},
-    {"id": "4485836416", "title": "Senior Services Sales Representative", "company": "Schneider Electric", "location": "Greater Gothenburg Metropolitan Area", "alert": "Säljingenjör", "received": "2026-11-10", "url": "https://www.linkedin.com/jobs/view/4485836416/"},
-    {"id": "4418173976", "title": "Sales Engineer", "company": "Flowserve Corporation", "location": "Nordöstra Göteborg", "alert": "Säljingenjör", "received": "2026-11-10", "url": "https://www.linkedin.com/jobs/view/4418173976/"},
-    {"id": "4436142256", "title": "Senior Sales Engineer – Treatment Aquatics", "company": "Xylem", "location": "Gothenburg", "alert": "Säljingenjör", "received": "2026-11-10", "url": "https://www.linkedin.com/jobs/view/4436142256/"},
-    {"id": "4487673636", "title": "Key Account Manager- OEM", "company": "DENSIQ Group", "location": "Gothenburg", "alert": "Säljingenjör", "received": "2026-11-10", "url": "https://www.linkedin.com/jobs/view/4487673636/"},
-    {"id": "4487179092", "title": "Enterprise Account Executive - Nordics", "company": "Chainguard", "location": "Greater Gothenburg Metropolitan Area", "alert": "Säljingenjör", "received": "2026-11-10", "url": "https://www.linkedin.com/jobs/view/4487179092/"}
+    {
+      "id": "4443779897",
+      "title": "(Senior) Account Manager (m/f/d)",
+      "company": "Emerson",
+      "location": "Göteborg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-09",
+      "url": "https://www.linkedin.com/jobs/view/4443779897/"
+    },
+    {
+      "id": "4486636851",
+      "title": "Distribution Sales Specialist",
+      "company": "Jefferson Wells Sverige",
+      "location": "Göteborg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-08",
+      "url": "https://www.linkedin.com/jobs/view/4486636851/"
+    },
+    {
+      "id": "4427593192",
+      "title": "Sales Engineer",
+      "company": "Flowserve Corporation",
+      "location": "Göteborg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-08",
+      "url": "https://www.linkedin.com/jobs/view/4427593192/"
+    },
+    {
+      "id": "4434454955",
+      "title": "Account Manager Sweden - Region South",
+      "company": "Master Builders Solutions",
+      "location": "Stor-Göteborg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-08",
+      "url": "https://www.linkedin.com/jobs/view/4434454955/"
+    },
+    {
+      "id": "4486264206",
+      "title": "Teknisk säljare inom fabriksbetong",
+      "company": "Swerock",
+      "location": "Göteborg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-07",
+      "url": "https://www.linkedin.com/jobs/view/4486264206/"
+    },
+    {
+      "id": "4487316569",
+      "title": "Process Vacuum Channel Manager",
+      "company": "Edwards Vacuum",
+      "location": "Stor-Göteborg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-07",
+      "url": "https://www.linkedin.com/jobs/view/4487316569/"
+    },
+    {
+      "id": "4480066962",
+      "title": "Servicetekniker/säljare inom Avbrottsfri kraft till Södra Sverige",
+      "company": "ABB",
+      "location": "Alingsås",
+      "alert": "Säljingenjör",
+      "received": "2026-11-07",
+      "url": "https://www.linkedin.com/jobs/view/4480066962/"
+    },
+    {
+      "id": "4486965680",
+      "title": "Affärsansvarig B2B-säljare inom IT",
+      "company": "Kontorsbemanning AB",
+      "location": "Göteborg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-07",
+      "url": "https://www.linkedin.com/jobs/view/4486965680/"
+    },
+    {
+      "id": "4487644583",
+      "title": "Avdelningschefer till Regionarkivet",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-09",
+      "url": "https://www.linkedin.com/jobs/view/4487644583/"
+    },
+    {
+      "id": "4487643281",
+      "title": "Vikarierande fastighetsvärd till Gamla Järnbrott",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-09",
+      "url": "https://www.linkedin.com/jobs/view/4487643281/"
+    },
+    {
+      "id": "4487641934",
+      "title": "Enhetschef till Bostad med särskild service i Hisingen",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-09",
+      "url": "https://www.linkedin.com/jobs/view/4487641934/"
+    },
+    {
+      "id": "4487629549",
+      "title": "Enhetschef Fritid till Socialförvaltningen Nordost",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-09",
+      "url": "https://www.linkedin.com/jobs/view/4487629549/"
+    },
+    {
+      "id": "4487640916",
+      "title": "Rektor till förskoleförvaltningen, område Centrum",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-09",
+      "url": "https://www.linkedin.com/jobs/view/4487640916/"
+    },
+    {
+      "id": "4487627923",
+      "title": "Biträdande rektor till Taubeskolan F-3",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-09",
+      "url": "https://www.linkedin.com/jobs/view/4487627923/"
+    },
+    {
+      "id": "4486651389",
+      "title": "Teknisk Servicechef",
+      "company": "Jefferson Wells Sverige",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-08",
+      "url": "https://www.linkedin.com/jobs/view/4486651389/"
+    },
+    {
+      "id": "4487622388",
+      "title": "Avdelningschef Ekonomi & inköp",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-08",
+      "url": "https://www.linkedin.com/jobs/view/4487622388/"
+    },
+    {
+      "id": "4477718104",
+      "title": "Arbetsledare till Peab Drift och Underhåll",
+      "company": "Peab",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-08",
+      "url": "https://www.linkedin.com/jobs/view/4477718104/"
+    },
+    {
+      "id": "4488725457",
+      "title": "Avdelningschef Ekonomi & inköp",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-08",
+      "url": "https://www.linkedin.com/jobs/view/4488725457/"
+    },
+    {
+      "id": "4487366335",
+      "title": "Förvaltningsledare till Regionarkivet i Göteborg",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-07",
+      "url": "https://www.linkedin.com/jobs/view/4487366335/"
+    },
+    {
+      "id": "4488167883",
+      "title": "Förvaltningsledare till Regionarkivet i Göteborg",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-07",
+      "url": "https://www.linkedin.com/jobs/view/4488167883/"
+    },
+    {
+      "id": "4488134033",
+      "title": "Verksamhetsledare till Kompetenscentrum",
+      "company": "Kungälvs kommun",
+      "location": "Kungälv",
+      "alert": "Förvaltare",
+      "received": "2026-11-07",
+      "url": "https://www.linkedin.com/jobs/view/4488134033/"
+    },
+    {
+      "id": "4486224429",
+      "title": "Lokalvårdssamordnare",
+      "company": "Göteborgs universitet",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-07",
+      "url": "https://www.linkedin.com/jobs/view/4486224429/"
+    },
+    {
+      "id": "4486225768",
+      "title": "Sektionschef",
+      "company": "Ragn-Sells",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-07",
+      "url": "https://www.linkedin.com/jobs/view/4486225768/"
+    },
+    {
+      "id": "4486229099",
+      "title": "Servicemedarbetare – Förråd, administration och vaktmästeri",
+      "company": "ISS A/S",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-07",
+      "url": "https://www.linkedin.com/jobs/view/4486229099/"
+    },
+    {
+      "id": "4486767082",
+      "title": "Enhetschef Konsultation till Hjälpmedelscentralen Mölndal",
+      "company": "Västra Götalandsregionen",
+      "location": "Mölndal",
+      "alert": "Förvaltare",
+      "received": "2026-11-06",
+      "url": "https://www.linkedin.com/jobs/view/4486767082/"
+    },
+    {
+      "id": "4483224311",
+      "title": "Systemförvaltare till Drift och underhåll",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-06",
+      "url": "https://www.linkedin.com/jobs/view/4483224311/"
+    },
+    {
+      "id": "4486774467",
+      "title": "Housekeeping Manager Room",
+      "company": "Liseberg",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-06",
+      "url": "https://www.linkedin.com/jobs/view/4486774467/"
+    },
+    {
+      "id": "4484831667",
+      "title": "Konsultenhetschef inom Life Cycle Management",
+      "company": "Combitech",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-06",
+      "url": "https://www.linkedin.com/jobs/view/4484831667/"
+    },
+    {
+      "id": "4487725950",
+      "title": "Assistant Store Manager till New Yorker i Nordstan",
+      "company": "NEW YORKER",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-06",
+      "url": "https://www.linkedin.com/jobs/view/4487725950/"
+    },
+    {
+      "id": "4487790372",
+      "title": "Gruppchef Säker och hållbar kemi",
+      "company": "IVL Svenska Miljöinstitutet",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-06",
+      "url": "https://www.linkedin.com/jobs/view/4487790372/"
+    },
+    {
+      "id": "4487913129",
+      "title": "Kommunikatör - intern kommunikation",
+      "company": "Västra Götalandsregionen",
+      "location": "Gothenburg",
+      "alert": "communications specialist",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4487913129/"
+    },
+    {
+      "id": "4487900452",
+      "title": "Account Manager raffinaderi och kemi",
+      "company": "DENSIQ Group",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4487900452/"
+    },
+    {
+      "id": "4485836416",
+      "title": "Senior Services Sales Representative",
+      "company": "Schneider Electric",
+      "location": "Greater Gothenburg Metropolitan Area",
+      "alert": "Säljingenjör",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4485836416/"
+    },
+    {
+      "id": "4418173976",
+      "title": "Sales Engineer",
+      "company": "Flowserve Corporation",
+      "location": "Nordöstra Göteborg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4418173976/"
+    },
+    {
+      "id": "4436142256",
+      "title": "Senior Sales Engineer – Treatment Aquatics",
+      "company": "Xylem",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4436142256/"
+    },
+    {
+      "id": "4487673636",
+      "title": "Key Account Manager- OEM",
+      "company": "DENSIQ Group",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4487673636/"
+    },
+    {
+      "id": "4487179092",
+      "title": "Enterprise Account Executive - Nordics",
+      "company": "Chainguard",
+      "location": "Greater Gothenburg Metropolitan Area",
+      "alert": "Säljingenjör",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4487179092/"
+    },
+    {
+      "id": "4488884038",
+      "title": "Bostadsbolaget söker två tekniska förvaltare",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4488884038/"
+    },
+    {
+      "id": "4487931297",
+      "title": "Bostadsbolaget söker två tekniska förvaltare.",
+      "company": "Göteborgs Stad",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4487931297/"
+    },
+    {
+      "id": "4488866689",
+      "title": "Kommersiell förvaltare till Vectura",
+      "company": "Jerrie",
+      "location": "Stor-Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4488866689/"
+    },
+    {
+      "id": "4487143876",
+      "title": "Förbundsdirektör",
+      "company": "Räddningstjänsten Storgöteborg",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4487143876/"
+    },
+    {
+      "id": "4488871293",
+      "title": "Biträdande Kommersiell förvaltare till Vectura",
+      "company": "Jerrie",
+      "location": "Stor-Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4488871293/"
+    },
+    {
+      "id": "4488886796",
+      "title": "Enhetschef till Havs- och vattenmyndighetens enhet för Vattenmiljö",
+      "company": "Havs- och vattenmyndigheten",
+      "location": "Göteborg",
+      "alert": "Förvaltare",
+      "received": "2026-11-10",
+      "url": "https://www.linkedin.com/jobs/view/4488886796/"
+    }
   ]
 }
