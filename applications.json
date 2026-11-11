@@ -30,17 +30,14 @@
       "company": "Sulzer (Nordic Water)",
       "role": "Inside Sales Engineer",
       "place": "Mölndal",
-      "status": "att-skicka",
+      "status": "bekraftad",
       "created": "2026-11-11",
-      "applied": null,
+      "applied": "2026-11-11",
       "deadline": null,
       "ad_url": "https://sulzer.wd502.myworkdayjobs.com/SulzerJobs/job/Mlndal/Inside-Sales-Engineer_JR104378",
       "apply_url": "https://sulzer.wd502.myworkdayjobs.com/SulzerJobs/job/Mlndal/Inside-Sales-Engineer_JR104378/apply",
       "job_ids": [],
-      "todo": [
-        "Läs igenom CV och personligt brev (engelska)",
-        "Skicka snart, annonsen har legat ute i över 30 dagar"
-      ],
+      "todo": [],
       "events": [
         {
           "date": "2026-11-11",
@@ -49,6 +46,10 @@
         {
           "date": "2026-11-11",
           "text": "CV och brev omgjorda till engelska"
+        },
+        {
+          "date": "2026-11-11",
+          "text": "Bekräftelse mottagen"
         }
       ]
     },
@@ -107,21 +108,22 @@
       "company": "Welldana",
       "role": "Support- och eftermarknadsspecialist",
       "place": "Göteborg/Västkusten",
-      "status": "att-skicka",
+      "status": "bekraftad",
       "created": "2026-11-11",
-      "applied": null,
+      "applied": "2026-11-11",
       "deadline": null,
       "ad_url": "https://www.intenso.se/sv/annons/26773690-support--och-eftermarknadsspecialist-welldana-as-sverige-filial-goteborg",
       "apply_url": "https://candidate.masterhelp.se/apply/23ee9818-47ad-4f87-8e9e-5191595f36e6",
       "job_ids": [],
-      "todo": [
-        "Läs igenom CV och personligt brev",
-        "Skicka snarast, urvalet sker löpande"
-      ],
+      "todo": [],
       "events": [
         {
           "date": "2026-11-11",
           "text": "CV och brev klara"
+        },
+        {
+          "date": "2026-11-11",
+          "text": "Bekräftelse mottagen"
         }
       ]
     },
@@ -130,9 +132,9 @@
       "company": "Flowserve",
       "role": "Sales Engineer",
       "place": "Göteborg",
-      "status": "att-skicka",
+      "status": "bekraftad",
       "created": "2026-11-11",
-      "applied": null,
+      "applied": "2026-11-11",
       "deadline": null,
       "ad_url": "https://careers.flowserve.com/goteborg-swe/sales-engineer/079789A65B2E4CB9AEF049094DB69B9D/job/",
       "apply_url": "https://rr.jobsyn.org/079789A65B2E4CB9AEF049094DB69B9D10",
@@ -140,14 +142,15 @@
         "li-4418173976",
         "li-4427593192"
       ],
-      "todo": [
-        "Läs igenom CV och personligt brev (engelska)",
-        "Skicka via Flowserves ansökningssida"
-      ],
+      "todo": [],
       "events": [
         {
           "date": "2026-11-11",
           "text": "CV och brev klara"
+        },
+        {
+          "date": "2026-11-11",
+          "text": "Bekräftelse mottagen"
         }
       ]
     },
@@ -156,23 +159,24 @@
       "company": "ACO Nordic",
       "role": "Innesäljare",
       "place": "Sävedalen",
-      "status": "att-skicka",
+      "status": "bekraftad",
       "created": "2026-11-11",
-      "applied": null,
+      "applied": "2026-11-11",
       "deadline": "2026-12-06",
       "ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31703172",
       "apply_url": "https://pnty-apply.ponty-system.se/oio?id=1418&pnty_src=platsbanken",
       "job_ids": [
         "31703172"
       ],
-      "todo": [
-        "Läs igenom CV och personligt brev",
-        "Skicka via ansökningssidan"
-      ],
+      "todo": [],
       "events": [
         {
           "date": "2026-11-11",
           "text": "CV och brev klara"
+        },
+        {
+          "date": "2026-11-11",
+          "text": "Bekräftelse mottagen"
         }
       ]
     },
