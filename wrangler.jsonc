@@ -1,0 +1,9 @@
+// Cloudflare Worker som serverar jobbagent-sidan (statiska filer).
+// Inloggning sköts av Cloudflare Access på workers.dev-adressen.
+{
+  "name": "jobbagent",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./"
+  }
+}
