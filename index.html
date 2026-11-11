@@ -505,13 +505,13 @@ document.getElementById("links").innerHTML = "Sök själv: " +
   '<a href="https://se.indeed.com/jobs?q=' + encodeURIComponent(inQuery) + '&l=' + encodeURIComponent("Göteborg") + '&sort=date" target="_blank" rel="noopener">Indeed</a>';
 // LINKS-END
 
-// Jobb från e-postaviseringar (Gmail): linkedin.json och jooble-epost.json.
+// Jobb från e-postaviseringar (Gmail): linkedin.json, jooble-epost.json och indeed-epost.json.
 const LI_ALERTS = ["Säljingenjör"];   // LinkedIn-aviseringar som visas
 function loadFeed(file, name, pick) {
   return fetch(file).then(r => r.json()).then(d => ({
     updated: d.updated,
     jobs: d.jobs.filter(pick).map(j => ({
-      id: (name === "LinkedIn" ? "li-" : "jooble-") + j.id, title: j.title, employer: j.company, place: j.location,
+      id: ({ LinkedIn: "li-", Jooble: "jooble-", Indeed: "indeed-" }[name]) + j.id, title: j.title, employer: j.company, place: j.location,
       published: j.received, url: j.url, source: name
     }))
   })).catch(() => ({ updated: null, jobs: [] }));
@@ -566,16 +566,17 @@ fetch("applications.json", noCache).then(r => r.json()).then(d => {
 Promise.all([
   fetch("jobs.json", noCache).then(r => r.json()),
   loadFeed("linkedin.json", "LinkedIn", j => LI_ALERTS.includes(j.alert)),
-  loadFeed("jooble-epost.json", "Jooble", () => true)
-]).then(([d, li, jo]) => {
-    data = { ...d, jobs: mergeJobs(d.jobs.concat(li.jobs, jo.jobs)) };
+  loadFeed("jooble-epost.json", "Jooble", () => true),
+  loadFeed("indeed-epost.json", "Indeed", () => true)
+]).then(([d, li, jo, ind]) => {
+    data = { ...d, jobs: mergeJobs(d.jobs.concat(li.jobs, jo.jobs, ind.jobs)) };
     const counts = {};
     for (const j of data.jobs) for (const s of j.sources) counts[s.name] = (counts[s.name] || 0) + 1;
     const when = new Date(d.updated).toLocaleString("sv-SE", { dateStyle: "long", timeStyle: "short" });
     meta.textContent = data.jobs.length + " jobb. Källor: " +
       Object.entries(counts).map(([k, v]) => k + " " + v).join(", ") +
       " (en annons kan finnas hos flera). Uppdaterad " + when +
-      (li.updated ? "; LinkedIn-mejl " + li.updated : "") + (jo.updated ? "; Jooble-mejl " + jo.updated : "") +
+      (li.updated ? "; LinkedIn-mejl " + li.updated : "") + (jo.updated ? "; Jooble-mejl " + jo.updated : "") + (ind.updated ? "; Indeed-mejl " + ind.updated : "") +
       ". Nya jobb (senaste två dagarna) har blå bakgrund.";
     render();
   })
