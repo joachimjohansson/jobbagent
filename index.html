@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>Jobbagent</title>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -11,64 +12,338 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#eaeff4; --card:#ffffff; --ink:#0b1520; --muted:#43515f; --line:#b4c0cc; --accent:#174e8c; --new:#d9e8f9; }
+  :root { --bg:#eaeff4; --card:#ffffff; --ink:#0b1520; --muted:#43515f; --line:#b4c0cc; --accent:#174e8c; --new:#d9e8f9;
+          --ok:#1d6b45; --okbg:#e3f3ea; --warn:#8f5200; --warnbg:#fff1d9; --bad:#a32525; --badbg:#fbe9e9; --info:#174e8c; --infobg:#dfeaf7; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#0b121a; --card:#131d28; --ink:#f3f7fb; --muted:#b4c0cc; --line:#3a4d66; --accent:#8cc4fa; --new:#1c3a5c; }
+    :root { --bg:#0b121a; --card:#131d28; --ink:#f3f7fb; --muted:#b4c0cc; --line:#3a4d66; --accent:#8cc4fa; --new:#1c3a5c;
+            --ok:#7fd6a8; --okbg:#143323; --warn:#f2bc6b; --warnbg:#3a2a10; --bad:#f19a9a; --badbg:#3d1a1a; --info:#8cc4fa; --infobg:#17304a; }
   }
   * { box-sizing: border-box; }
   html { font-size:112.5%; }
   body { margin:0; background:var(--bg); color:var(--ink); font:1rem/1.55 "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif; }
-  main { max-width:780px; margin:0 auto; padding:24px 16px 48px; }
+  main { max-width:1280px; margin:0 auto; padding:24px 16px 48px; }
   h1 { font:700 1.6rem/1.2 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing:-.01em; margin:0 0 6px; }
-  .meta { color:var(--muted); margin:0 0 20px; }
-  input[type=search] { width:100%; padding:10px 12px; font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; margin-bottom:10px; }
-  input:focus-visible, a:focus-visible, button:focus-visible, select:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
-  .tools { display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; margin-bottom:16px; color:var(--muted); font-size:.95rem; }
+  h2 { font:700 1.15rem/1.25 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; margin:0; display:flex; align-items:baseline; gap:8px; }
+  h2 .n { font:600 .9rem "Source Sans 3", system-ui, sans-serif; color:var(--muted); }
+  .intro { color:var(--muted); margin:0 0 20px; }
+  .layout { display:grid; gap:28px; grid-template-columns:minmax(0,1fr); grid-template-areas:"todo" "status" "jobs" "archive" "report"; }
+  @media (min-width: 1000px) {
+    .layout { grid-template-columns:minmax(0,5fr) minmax(0,7fr); grid-template-areas:"todo jobs" "status jobs" "archive jobs" "report jobs"; align-items:start; }
+    .layout > #jobsSection { grid-row:1 / span 5; }
+  }
+  section { min-width:0; display:flex; flex-direction:column; gap:10px; }
+  #todoSection { grid-area:todo; } #statusSection { grid-area:status; } #jobsSection { grid-area:jobs; }
+  #archiveSection { grid-area:archive; } #reportSection { grid-area:report; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:12px 14px; display:flex; flex-direction:column; gap:6px; min-width:0; }
+  .card h3 { margin:0; font-size:1.05rem; line-height:1.3; }
+  .card .role { color:var(--muted); margin:-4px 0 0; font-size:.95rem; }
+  .pill { display:inline-block; font-size:.85rem; font-weight:600; padding:2px 10px; border-radius:999px; background:var(--infobg); color:var(--info); }
+  .pill.ok { background:var(--okbg); color:var(--ok); } .pill.warn { background:var(--warnbg); color:var(--warn); }
+  .pill.bad { background:var(--badbg); color:var(--bad); } .pill.plain { background:var(--bg); color:var(--muted); }
+  .row { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; }
+  .latest { font-weight:600; margin:0; }
+  .todo-list { margin:0; padding-left:20px; }
+  .timeline { list-style:none; margin:0; padding:0; font-size:.92rem; color:var(--muted); display:flex; flex-wrap:wrap; gap:2px 14px; }
+  .timeline li::before { content:"•"; margin-right:6px; color:var(--line); }
+  .timeline li:first-child::before { content:none; margin:0; }
+  .linkrow { display:flex; flex-wrap:wrap; gap:4px 16px; font-size:.95rem; }
+  a { color:var(--accent); }
+  .sent { display:flex; align-items:center; gap:8px; font-size:.95rem; color:var(--muted); cursor:pointer; }
+  .sent input { width:20px; height:20px; accent-color:var(--accent); margin:0; }
+  .note { font-size:.9rem; color:var(--muted); margin:0; }
+  .empty { color:var(--muted); margin:0; }
+  details > summary { cursor:pointer; list-style:none; }
+  details > summary::-webkit-details-marker { display:none; }
+  details > summary h2::before { content:"▸"; font-size:.9rem; color:var(--muted); }
+  details[open] > summary h2::before { content:"▾"; }
+  details > div { display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+  input:focus-visible, a:focus-visible, button:focus-visible, select:focus-visible, summary:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  button, select { font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; padding:4px 10px; cursor:pointer; }
+  table { border-collapse:collapse; width:100%; font-size:.95rem; font-variant-numeric:tabular-nums; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-weight:600; color:var(--muted); }
+  .tablewrap { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:6px; }
+  /* Nya jobb (samma utseende som tidigare) */
+  input[type=search] { width:100%; padding:10px 12px; font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; }
+  .tools { display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; color:var(--muted); font-size:.95rem; }
   .tools label { display:flex; align-items:center; gap:6px; cursor:pointer; }
-  .tools select, .tools button { font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; padding:4px 10px; cursor:pointer; }
-  .job { display:flex; gap:12px; align-items:flex-start; background:var(--card); border:1px solid var(--line); border-radius:6px; padding:12px 14px; margin-bottom:10px; }
+  .job { display:flex; gap:12px; align-items:flex-start; background:var(--card); border:1px solid var(--line); border-radius:6px; padding:12px 14px; }
   .job.new { background:var(--new); border-color:var(--accent); }
   .job.done, .job.down { opacity:.72; }
   .job input[type=checkbox] { width:22px; height:22px; margin:2px 0 0; flex:none; cursor:pointer; accent-color:var(--accent); }
   .job > div { flex:1; min-width:0; }
-  .job a { color:var(--accent); font-weight:600; text-decoration:none; }
+  .job a { font-weight:600; text-decoration:none; }
   .job a:hover { text-decoration:underline; }
   .job p { margin:2px 0 0; color:var(--muted); font-size:.95rem; }
   .sok { display:flex; flex-direction:column; align-items:center; gap:2px; flex:none; font-size:.8rem; color:var(--muted); cursor:pointer; }
   .sok input { margin:0 !important; }
   .actions { display:flex; flex-wrap:wrap; gap:4px 16px; margin-top:6px; font-size:.95rem; }
   .job .actions a { font-weight:400; }
-  .actions button { font:inherit; color:var(--accent); background:none; border:0; padding:0; cursor:pointer; text-decoration:underline; }
-  .status { color:var(--muted); margin:-6px 0 12px; font-size:.95rem; }
+  .actions button { color:var(--accent); background:none; border:0; padding:0; text-decoration:underline; }
+  .status { color:var(--muted); font-size:.95rem; margin:0; }
   .status:empty { display:none; }
-  .empty { color:var(--muted); }
   .badge { color:var(--accent); font-size:.9rem; margin-top:2px; }
-  .thumbs { display:flex; gap:6px; }
-  .job > .thumbs { flex:none; }
-  .thumbs button { font-size:1.05rem; line-height:1; padding:6px 8px; background:transparent; border:1px solid var(--line); border-radius:6px; cursor:pointer; opacity:.7; }
+  .thumbs { display:flex; gap:6px; flex:none; }
+  .thumbs button { font-size:1.05rem; line-height:1; padding:6px 8px; background:transparent; opacity:.7; }
   .thumbs button[aria-pressed=true] { opacity:1; border-color:var(--accent); background:var(--new); }
   .src { margin:2px 0 0; color:var(--muted); font-size:.95rem; }
-  .src a { color:var(--accent); font-weight:400; }
-  .links { margin:0 0 14px; color:var(--muted); font-size:.95rem; }
-  .links a { color:var(--accent); }
+  .src a { font-weight:400; }
+  .links { margin:0; color:var(--muted); font-size:.95rem; }
+  #jobList, #todoList, #statusList, #archiveList { display:flex; flex-direction:column; gap:10px; }
+  @media (max-width: 520px) { .job { flex-wrap:wrap; } .job > .thumbs { margin-left:34px; } }
+  @media print {
+    body { background:#fff; color:#000; }
+    body.printing main > *:not(.layout), body.printing .layout > section:not(#reportSection), body.printing #reportSection .noprint { display:none !important; }
+    body.printing .layout { display:block; }
+    body.printing .tablewrap { border:0; }
+    body.printing th, body.printing td { border-color:#999; color:#000; }
+  }
 </style>
 </head>
 <body>
 <main>
-  <h1>Jobb i Göteborg</h1>
-  <p class="meta" id="meta">Hämtar jobb…</p>
-  <p class="links" id="links"></p>
-  <input id="filter" type="search" placeholder="Filtrera på titel, företag eller ort" aria-label="Filtrera jobb">
-  <div class="tools">
-    <label><input type="checkbox" id="hide"> Dölj jobb jag har sökt eller ogillat</label>
-    <label>Sortera: <select id="sort"><option value="new">Nyast först</option><option value="match">Bäst match först</option><option value="deadline">Sista ansökningsdag</option></select></label>
-    <button id="export" type="button">Kopiera mina betyg</button>
-    <span id="count"></span>
+  <h1>Jobbagent</h1>
+  <p class="intro" id="intro">Hämtar läget…</p>
+  <div class="layout">
+    <section id="todoSection" aria-labelledby="todoTitle">
+      <h2 id="todoTitle">Att göra <span class="n" id="todoCount"></span></h2>
+      <div id="todoList"></div>
+    </section>
+
+    <section id="statusSection" aria-labelledby="statusTitle">
+      <h2 id="statusTitle">Läget för skickade ansökningar <span class="n" id="statusCount"></span></h2>
+      <div id="statusList"></div>
+    </section>
+
+    <section id="jobsSection" aria-labelledby="jobsTitle">
+      <h2 id="jobsTitle">Nya jobb <span class="n" id="count"></span></h2>
+      <p class="intro" id="meta" style="margin:0">Hämtar jobb…</p>
+      <p class="links" id="links"></p>
+      <input id="filter" type="search" placeholder="Filtrera på titel, företag eller ort" aria-label="Filtrera jobb">
+      <div class="tools">
+        <label><input type="checkbox" id="hide" checked> Dölj jobb jag har sökt eller ogillat</label>
+        <label>Sortera: <select id="sort"><option value="new">Nyast först</option><option value="match">Bäst match först</option><option value="deadline">Sista ansökningsdag</option></select></label>
+        <button id="export" type="button">Kopiera mina betyg</button>
+      </div>
+      <p class="status" id="status" role="status"></p>
+      <div id="jobList"></div>
+    </section>
+
+    <section id="archiveSection">
+      <details id="archive">
+        <summary><h2>Arkiv <span class="n" id="archiveCount"></span></h2></summary>
+        <div id="archiveList"></div>
+      </details>
+    </section>
+
+    <section id="reportSection" aria-labelledby="reportTitle">
+      <h2 id="reportTitle">Sökta jobb per månad</h2>
+      <div class="row noprint">
+        <label>Månad: <select id="month"></select></label>
+        <button type="button" id="csv">Ladda ner för Excel</button>
+        <button type="button" id="print">Skriv ut</button>
+      </div>
+      <div class="tablewrap"><table id="reportTable"></table></div>
+      <p class="note noprint">Visar ansökningar med skickat-datum i vald månad.</p>
+    </section>
   </div>
-  <p class="status" id="status" role="status"></p>
-  <div id="list"></div>
 </main>
 <script>
+// ---------- Ansökningar (applications.json) ----------
+const SENT_KEY = "jobbagent-skickat-har";          // ansökningar markerade som skickade i den här webbläsaren
+let localSent = {};
+try { localSent = JSON.parse(localStorage.getItem(SENT_KEY) || "{}"); } catch (e) {}
+function saveSent() { try { localStorage.setItem(SENT_KEY, JSON.stringify(localSent)); } catch (e) {} }
+
+const STATUS = {
+  "att-skicka": { label: "Att skicka", cls: "warn" },
+  "skickad":    { label: "Skickad, väntar på svar", cls: "plain" },
+  "bekraftad":  { label: "Bekräftelse mottagen", cls: "" },
+  "intervju":   { label: "Intervju", cls: "ok" },
+  "erbjudande": { label: "Erbjudande", cls: "ok" },
+  "avslag":     { label: "Avslag", cls: "bad" },
+  "tackat-nej": { label: "Tackat nej", cls: "plain" },
+  "avslutad":   { label: "Avslutad", cls: "plain" }
+};
+const ACTIVE = ["skickad", "bekraftad", "intervju", "erbjudande"];
+const ARCHIVE = ["avslag", "tackat-nej", "avslutad"];
+const FOLLOW_UP_DAYS = 14;
+
+let apps = [];
+let appliedJobIds = new Set();
+
+function el(tag, attrs, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === "text") e.textContent = v; else if (k === "class") e.className = v; else e.setAttribute(k, v);
+  }
+  for (const k of kids) if (k != null) e.append(k);
+  return e;
+}
+function pd(s) { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ""); return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null; }
+function today() { const d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+function daysBetween(a, b) { return Math.round((a - b) / 86400000); }
+function fmt(s) { const d = pd(s); return d ? d.toLocaleDateString("sv-SE", { day: "numeric", month: "short" }).replace(".", "") : ""; }
+function iso(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+function safeUrl(u) { return typeof u === "string" && /^https?:\/\//.test(u) ? u : null; }
+function plural(n, one, many) { return n + " " + (n === 1 ? one : many); }
+
+// Status som visas: filen gäller, men en lokal bock flyttar en "att skicka" till skickad.
+function effective(a) {
+  const local = localSent[a.id];
+  if (a.status === "att-skicka" && local) {
+    return { ...a, status: "skickad", applied: local, localOnly: true,
+             events: (a.events || []).concat([{ date: local, text: "Markerad som skickad här" }]) };
+  }
+  return a;
+}
+function latestText(a) {
+  const ev = (a.events || []).filter(e => e && e.text);
+  if (!ev.length) return STATUS[a.status] ? STATUS[a.status].label : a.status;
+  const last = ev[ev.length - 1];
+  return last.text + (last.date ? ", " + fmt(last.date) : "");
+}
+function linkRow(a, applyFirst) {
+  const r = el("div", { class: "linkrow" });
+  const ad = safeUrl(a.ad_url), ap = safeUrl(a.apply_url);
+  if (applyFirst && ap) r.append(el("a", { href: ap, target: "_blank", rel: "noopener", text: "Ansök här" }));
+  if (ad) r.append(el("a", { href: ad, target: "_blank", rel: "noopener", text: "Annonsen" }));
+  return r.childNodes.length ? r : null;
+}
+function timeline(a) {
+  const ev = (a.events || []).filter(e => e && e.text);
+  if (ev.length < 2) return null;
+  const ul = el("ul", { class: "timeline", "aria-label": "Tidslinje" });
+  for (const e of ev) ul.append(el("li", { text: (e.date ? fmt(e.date) + " " : "") + e.text }));
+  return ul;
+}
+
+function todoCard(a) {
+  const c = el("article", { class: "card" });
+  c.append(el("h3", { text: a.company }), el("p", { class: "role", text: [a.role, a.place].filter(Boolean).join(", ") }));
+  const row = el("div", { class: "row" });
+  const dl = pd(a.deadline);
+  if (dl) {
+    const left = daysBetween(dl, today());
+    const txt = left < 0 ? "Sista dag passerad (" + fmt(a.deadline) + ")" : left === 0 ? "Sista dag i dag" : "Sista dag " + fmt(a.deadline) + ", " + plural(left, "dag", "dagar") + " kvar";
+    row.append(el("span", { class: "pill " + (left <= 3 ? "bad" : "warn"), text: txt }));
+  } else row.append(el("span", { class: "pill plain", text: "Sista dag okänd" }));
+  c.append(row);
+  if (a.todo && a.todo.length) {
+    const ol = el("ol", { class: "todo-list" });
+    a.todo.forEach(t => ol.append(el("li", { text: t })));
+    c.append(ol);
+  }
+  const links = linkRow(a, true); if (links) c.append(links);
+  const id = "sent-" + a.id;
+  const box = el("input", { type: "checkbox", id });
+  box.addEventListener("change", () => {
+    if (box.checked) localSent[a.id] = iso(today()); else delete localSent[a.id];
+    saveSent(); renderApps();
+  });
+  c.append(el("label", { class: "sent", for: id }, box, "Jag har skickat ansökan"));
+  return c;
+}
+function statusCard(a) {
+  const c = el("article", { class: "card" });
+  const st = STATUS[a.status] || { label: a.status, cls: "plain" };
+  c.append(el("h3", { text: a.company }), el("p", { class: "role", text: [a.role, a.place].filter(Boolean).join(", ") }));
+  const row = el("div", { class: "row" }, el("span", { class: "pill " + st.cls, text: st.label }));
+  const ap = pd(a.applied);
+  if (ap && ["skickad", "bekraftad"].includes(a.status) && daysBetween(today(), ap) >= FOLLOW_UP_DAYS)
+    row.append(el("span", { class: "pill warn", text: "Dags att följa upp" }));
+  const lt = latestText(a);
+  if (lt.toLowerCase().startsWith(st.label.toLowerCase().split(",")[0])) row.firstChild.textContent = lt;
+  c.append(row);
+  if (row.firstChild.textContent !== lt) c.append(el("p", { class: "latest", text: lt }));
+  const tl = timeline(a); if (tl) c.append(tl);
+  if (a.localOnly) {
+    c.append(el("p", { class: "note", text: "Markerad som skickad i den här webbläsaren. Läget uppdateras när bekräftelsen kommer i mejlen." }));
+    const undo = el("button", { type: "button", text: "Ångra" });
+    undo.addEventListener("click", () => { delete localSent[a.id]; saveSent(); renderApps(); });
+    c.append(el("div", { class: "row" }, undo));
+  }
+  const links = linkRow(a, false); if (links) c.append(links);
+  return c;
+}
+
+function renderApps() {
+  const list = apps.map(effective);
+  const todo = list.filter(a => a.status === "att-skicka").sort((a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999"));
+  const active = list.filter(a => ACTIVE.includes(a.status)).sort((a, b) => {
+    const order = s => ["erbjudande", "intervju", "bekraftad", "skickad"].indexOf(s);
+    return order(a.status) - order(b.status) || (b.applied || "").localeCompare(a.applied || "");
+  });
+  const archived = list.filter(a => ARCHIVE.includes(a.status));
+
+  const t = document.getElementById("todoList"); t.replaceChildren();
+  document.getElementById("todoCount").textContent = todo.length ? "(" + todo.length + ")" : "";
+  if (!todo.length) t.append(el("p", { class: "empty", text: "Inget väntar på att skickas." }));
+  todo.forEach(a => t.append(todoCard(a)));
+
+  const s = document.getElementById("statusList"); s.replaceChildren();
+  document.getElementById("statusCount").textContent = active.length ? "(" + active.length + ")" : "";
+  if (!active.length) s.append(el("p", { class: "empty", text: "Inga skickade ansökningar väntar på svar." }));
+  active.forEach(a => s.append(statusCard(a)));
+
+  const ar = document.getElementById("archiveList"); ar.replaceChildren();
+  document.getElementById("archiveCount").textContent = "(" + archived.length + ")";
+  if (!archived.length) ar.append(el("p", { class: "empty", text: "Inga avslutade ansökningar ännu." }));
+  archived.forEach(a => ar.append(statusCard(a)));
+
+  renderReport(list);
+  if (data.jobs.length) render();
+}
+
+// ---------- Månadsrapport ----------
+const MONTHS = ["januari","februari","mars","april","maj","juni","juli","augusti","september","oktober","november","december"];
+function monthOf(a) { return a.applied ? a.applied.slice(0, 7) : (a.applied_month || null); }
+function monthLabel(m) { const [y, mm] = m.split("-"); return MONTHS[+mm - 1] + " " + y; }
+function reportRows(list, m) {
+  return list.filter(a => a.status !== "att-skicka" && monthOf(a) === m)
+    .sort((a, b) => (a.applied || "9").localeCompare(b.applied || "9"))
+    .map(a => [a.applied || "Okänt datum", a.company, a.role, a.place || "", (STATUS[a.status] || {}).label || a.status]);
+}
+const HEAD = ["Datum sökt", "Arbetsgivare", "Tjänst", "Ort", "Status"];
+let reportList = [];
+function renderReport(list) {
+  reportList = list;
+  const sel = document.getElementById("month");
+  const months = [...new Set(list.map(monthOf).filter(Boolean))].sort().reverse();
+  const cur = iso(today()).slice(0, 7);
+  if (!months.includes(cur)) months.unshift(cur);
+  const keep = sel.value;
+  sel.replaceChildren(...months.map(m => el("option", { value: m, text: monthLabel(m) })));
+  sel.value = months.includes(keep) ? keep : months[0];
+  drawReport();
+}
+function drawReport() {
+  const m = document.getElementById("month").value;
+  const rows = reportRows(reportList, m);
+  const tbl = document.getElementById("reportTable");
+  tbl.replaceChildren(el("caption", { style: "text-align:left;padding:8px;font-weight:600", text: "Sökta jobb, " + monthLabel(m) }));
+  tbl.append(el("thead", null, el("tr", null, ...HEAD.map(h => el("th", { text: h })))));
+  const tb = el("tbody");
+  if (!rows.length) tb.append(el("tr", null, el("td", { colspan: "5", text: "Inga skickade ansökningar den här månaden." })));
+  rows.forEach(r => tb.append(el("tr", null, ...r.map(v => el("td", { text: v })))));
+  tbl.append(tb);
+}
+document.getElementById("month").addEventListener("change", drawReport);
+document.getElementById("csv").addEventListener("click", () => {
+  const m = document.getElementById("month").value;
+  const q = v => '"' + String(v).replace(/"/g, '""') + '"';
+  const text = [HEAD].concat(reportRows(reportList, m)).map(r => r.map(q).join(";")).join("\r\n");
+  const blob = new Blob(["﻿" + text], { type: "text/csv;charset=utf-8" });
+  const a = el("a", { href: URL.createObjectURL(blob), download: "sokta-jobb-" + m + ".csv" });
+  document.body.append(a); a.click(); a.remove();
+});
+document.getElementById("print").addEventListener("click", () => {
+  document.body.classList.add("printing");
+  window.print();
+});
+window.addEventListener("afterprint", () => document.body.classList.remove("printing"));
+
+// ---------- Nya jobb ----------
 const KEY = "jobbagent-sokta";
 const RKEY = "jobbagent-betyg";
 let applied = new Set();
@@ -79,7 +354,7 @@ function save() { try { localStorage.setItem(KEY, JSON.stringify([...applied]));
 function saveRatings() { try { localStorage.setItem(RKEY, JSON.stringify(ratings)); } catch (e) {} }
 
 let data = { jobs: [] };
-const list = document.getElementById("list");
+const list = document.getElementById("jobList");
 const meta = document.getElementById("meta");
 
 function isNew(job) {
@@ -124,7 +399,8 @@ function startApplication(j) {
 }
 
 function idsOf(j) { return [j.id].concat(j.altIds || []); }
-function isApplied(j) { return idsOf(j).some(id => applied.has(id)); }
+function inApplications(j) { return idsOf(j).some(id => appliedJobIds.has(id)); }
+function isApplied(j) { return inApplications(j) || idsOf(j).some(id => applied.has(id)); }
 function myRating(j) { for (const id of idsOf(j)) if (ratings[id]) return ratings[id].v; return 0; }
 
 function rate(job, v) {
@@ -137,8 +413,8 @@ function rate(job, v) {
 
 function exportText() {
   const rows = Object.values(ratings);
-  const fmt = r => "- " + [r.t, r.e, r.p].filter(Boolean).join(" | ");
-  const part = v => rows.filter(r => r.v === v).map(fmt).join("\n") || "-";
+  const fmtR = r => "- " + [r.t, r.e, r.p].filter(Boolean).join(" | ");
+  const part = v => rows.filter(r => r.v === v).map(fmtR).join("\n") || "-";
   return "Gillade jobb:\n" + part(1) + "\n\nOgillade jobb:\n" + part(-1);
 }
 
@@ -160,14 +436,11 @@ function render() {
   if (sortBy === "match") jobs.sort((a, b) => (b._r - a._r) || b.published.localeCompare(a.published));
   else if (sortBy === "deadline") jobs.sort((a, b) =>
     (a.deadline || "9999").localeCompare(b.deadline || "9999") || b.published.localeCompare(a.published));
+  else jobs.sort((a, b) => (b.published || "").localeCompare(a.published || ""));
 
-  document.getElementById("count").textContent =
-    applied.size + " sökta, " + Object.keys(ratings).length + " betygsatta";
+  document.getElementById("count").textContent = "(" + jobs.length + " visas)";
   list.replaceChildren();
-  if (!jobs.length) {
-    list.innerHTML = '<p class="empty">Inga jobb matchar filtret.</p>';
-    return;
-  }
+  if (!jobs.length) { list.append(el("p", { class: "empty", text: "Inga jobb matchar filtret." })); return; }
   for (const j of jobs) {
     const my = myRating(j);
     const div = document.createElement("div");
@@ -176,6 +449,7 @@ function render() {
     const box = document.createElement("input");
     box.type = "checkbox";
     box.checked = isApplied(j);
+    box.disabled = inApplications(j);
     box.setAttribute("aria-label", "Sök jobbet och starta ansökan: " + j.title);
     box.addEventListener("change", () => {
       if (box.checked) { applied.add(j.id); startApplication(j); } else idsOf(j).forEach(id => applied.delete(id));
@@ -184,61 +458,35 @@ function render() {
     });
     const sok = document.createElement("label");
     sok.className = "sok";
-    const sokText = document.createElement("span");
-    sokText.textContent = "Sök";
-    sok.append(box, sokText);
+    sok.append(box, el("span", { text: inApplications(j) ? "Sökt" : "Sök" }));
 
     const body = document.createElement("div");
-    body.className = "body";
-    const a = document.createElement("a");
-    a.href = j.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = j.title;
-    const p = document.createElement("p");
+    const a = el("a", { href: j.url, target: "_blank", rel: "noopener", text: j.title });
     const parts = [j.employer, j.place, "Publicerad " + j.published];
     if (j.deadline) parts.push("Sista ansökningsdag " + j.deadline);
-    p.textContent = parts.filter(Boolean).join(", ");
-    const src = document.createElement("p");
-    src.className = "src";
-    src.append("Annonsen finns hos: ");
+    const p = el("p", { text: parts.filter(Boolean).join(", ") });
+    const src = el("p", { class: "src" }, "Annonsen finns hos: ");
     j.sources.forEach((x, i) => {
       if (i) src.append(" · ");
-      if (x.url) {
-        const l = document.createElement("a");
-        l.href = x.url; l.target = "_blank"; l.rel = "noopener"; l.textContent = x.name;
-        src.append(l);
-      } else src.append(x.name);
+      if (x.url) src.append(el("a", { href: x.url, target: "_blank", rel: "noopener", text: x.name }));
+      else src.append(x.name);
     });
     body.append(a, p, src);
-    if (ready && !my && j._s >= 2) {
-      const b = document.createElement("div");
-      b.className = "badge"; b.textContent = "Liknar jobb du har gillat";
-      body.append(b);
-    } else if (ready && !my && j._s <= -2) {
-      const b = document.createElement("div");
-      b.className = "badge"; b.textContent = "Liknar jobb du har ogillat";
-      body.append(b);
-    }
+    if (ready && !my && j._s >= 2) body.append(el("div", { class: "badge", text: "Liknar jobb du har gillat" }));
+    else if (ready && !my && j._s <= -2) body.append(el("div", { class: "badge", text: "Liknar jobb du har ogillat" }));
 
-    if (isApplied(j)) {
-      const act = document.createElement("div");
-      act.className = "actions";
-      const open = document.createElement("a");
-      open.href = claudeUrl(j); open.target = "_blank"; open.rel = "noopener";
-      open.textContent = "Öppna ansökan i Claude";
-      const copy = document.createElement("button");
-      copy.type = "button"; copy.textContent = "Kopiera prompt";
+    if (isApplied(j) && !inApplications(j)) {
+      const act = el("div", { class: "actions" });
+      act.append(el("a", { href: claudeUrl(j), target: "_blank", rel: "noopener", text: "Öppna ansökan i Claude" }));
+      const copy = el("button", { type: "button", text: "Kopiera prompt" });
       copy.addEventListener("click", () => copyPrompt(j));
-      act.append(open, copy);
+      act.append(copy);
       body.append(act);
     }
 
-    const thumbs = document.createElement("div");
-    thumbs.className = "thumbs";
+    const thumbs = el("div", { class: "thumbs" });
     for (const [v, icon, label] of [[1, "👍", "Tummen upp"], [-1, "👎", "Tummen ner"]]) {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.textContent = icon;
-      btn.setAttribute("aria-label", label + ": " + j.title);
-      btn.setAttribute("aria-pressed", my === v ? "true" : "false");
+      const btn = el("button", { type: "button", text: icon, "aria-label": label + ": " + j.title, "aria-pressed": my === v ? "true" : "false" });
       btn.addEventListener("click", () => rate(j, v));
       thumbs.append(btn);
     }
@@ -285,9 +533,9 @@ function similarTitle(a, b) {
 function addSource(job, name, url) {
   if (!job.sources.some(s => s.name === name)) job.sources.push({ name, url });
 }
-function mergeJobs(list) {
+function mergeJobs(all) {
   const out = [];
-  for (const j of list) {
+  for (const j of all) {
     j.sources = (j.sources && j.sources.length) ? j.sources.slice() : [{ name: j.source, url: j.url }];
     const ek = employerKey(j.employer);
     // Två annonser från samma källa slås aldrig ihop (kan vara olika tjänster hos samma företag).
@@ -302,8 +550,21 @@ function mergeJobs(list) {
   return out;
 }
 
+const noCache = { cache: "no-cache" };
+fetch("applications.json", noCache).then(r => r.json()).then(d => {
+  apps = Array.isArray(d.applications) ? d.applications : [];
+  appliedJobIds = new Set(apps.flatMap(a => a.job_ids || []));
+  document.getElementById("intro").textContent = "Läget uppdaterat " +
+    (d.updated ? pd(d.updated).toLocaleDateString("sv-SE", { day: "numeric", month: "long" }) : "okänt datum") +
+    ". Svar från arbetsgivare läses in från mejlen tre gånger om dagen.";
+  renderApps();
+}).catch(() => {
+  document.getElementById("intro").textContent = "Kunde inte läsa ansökningarna (applications.json).";
+  renderApps();
+});
+
 Promise.all([
-  fetch("jobs.json").then(r => r.json()),
+  fetch("jobs.json", noCache).then(r => r.json()),
   loadFeed("linkedin.json", "LinkedIn", j => LI_ALERTS.includes(j.alert)),
   loadFeed("jooble-epost.json", "Jooble", () => true)
 ]).then(([d, li, jo]) => {

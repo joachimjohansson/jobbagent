@@ -1,0 +1,100 @@
+{
+  "updated": "2026-11-11",
+  "applications": [
+    {
+      "id": "momentum-kundservice",
+      "company": "Momentum Industrial",
+      "role": "Kundservice / innesäljare",
+      "place": "Göteborg",
+      "status": "att-skicka",
+      "created": "2026-11-11",
+      "applied": null,
+      "deadline": "2026-11-13",
+      "ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31596127",
+      "apply_url": "https://jobs.hiring.heartpace.com/momentumindustrial/kundservice-goteborg/view-job?job_board_slug=platsbanken",
+      "job_ids": ["31596127"],
+      "todo": [
+        "Läs igenom CV och personligt brev",
+        "Ange referens P664OV60J i ansökan",
+        "Skicka via ansökningssidan"
+      ],
+      "events": [
+        { "date": "2026-11-11", "text": "CV och brev klara" }
+      ]
+    },
+    {
+      "id": "aco-nordic-innesaljare",
+      "company": "ACO Nordic",
+      "role": "Innesäljare",
+      "place": "Sävedalen",
+      "status": "att-skicka",
+      "created": "2026-11-11",
+      "applied": null,
+      "deadline": "2026-12-06",
+      "ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31703172",
+      "apply_url": "https://pnty-apply.ponty-system.se/oio?id=1418&pnty_src=platsbanken",
+      "job_ids": ["31703172"],
+      "todo": [
+        "Läs igenom CV och personligt brev",
+        "Skicka via ansökningssidan"
+      ],
+      "events": [
+        { "date": "2026-11-11", "text": "CV och brev klara" }
+      ]
+    },
+    {
+      "id": "solar-teknisk-innesaljare",
+      "company": "Solar",
+      "role": "Teknisk innesäljare – Support Specialist Automation",
+      "place": "Göteborg",
+      "status": "bekraftad",
+      "created": "2026-11-05",
+      "applied": "2026-11-05",
+      "deadline": "2026-11-22",
+      "ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31659907",
+      "apply_url": null,
+      "job_ids": ["31659907"],
+      "todo": [],
+      "events": [
+        { "date": "2026-11-05", "text": "Ansökan skickad" },
+        { "date": "2026-11-05", "text": "Bekräftelse mottagen" }
+      ]
+    },
+    {
+      "id": "ahlsell-butikssaljare",
+      "company": "Ahlsell",
+      "role": "Butikssäljare",
+      "place": "Göteborg",
+      "status": "bekraftad",
+      "created": "2026-11-04",
+      "applied": "2026-11-05",
+      "deadline": "2026-11-13",
+      "ad_url": "https://jobb.ahlsell.se/jobs/5120-butikssaljare-till-ahlsell",
+      "apply_url": null,
+      "job_ids": [],
+      "todo": [],
+      "events": [
+        { "date": "2026-11-05", "text": "Ansökan skickad" },
+        { "date": "2026-11-05", "text": "Bekräftelse mottagen" }
+      ]
+    },
+    {
+      "id": "teckentrup-teknisk-saljare",
+      "company": "Teckentrup Scandinavia",
+      "role": "Teknisk säljare",
+      "place": "Göteborg",
+      "status": "skickad",
+      "created": "2026-11-05",
+      "applied": null,
+      "applied_month": "2026-11",
+      "deadline": "2026-12-06",
+      "ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31648096",
+      "apply_url": null,
+      "job_ids": ["31648096"],
+      "todo": [],
+      "events": [
+        { "date": null, "text": "Ansökan skickad, datum okänt" }
+      ]
+    }
+  ]
+}

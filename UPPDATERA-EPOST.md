@@ -23,3 +23,26 @@ Repot är offentligt: lägg aldrig in inloggningslänkar, token eller personuppg
 - Kontrollera att filerna är giltig JSON och att inga `token=` finns: `grep -c token linkedin.json jooble-epost.json` ska ge 0.
 - Commit och push till `main`. Rör inte `jobs.json`, den uppdateras av GitHub Actions.
 - Sidan slår ihop samma annons från flera källor och visar alla (Platsbanken, LinkedIn, Jooble).
+
+# Svar på ansökningar -> applications.json
+
+Körs tre gånger per dag av Claude (schemalagd uppgift "Bevaka ansökningsmejl"). Startsidan visar Att göra, Läget, Arkiv och månadsrapporten från den här filen.
+
+## Integritet (repot är offentligt)
+- Spara bara: företag, tjänst, ort, status, datum, länkar till annonsen och ansökningssidan samt korta neutrala händelser.
+- Spara aldrig: namn på personer, mejladresser, telefonnummer, citat ur mejl, inloggnings- eller kandidatlänkar, löneuppgifter eller anteckningar.
+
+## Fält per ansökan
+- `id` (fast, t.ex. `solar-teknisk-innesaljare`), `company`, `role`, `place`, `deadline`, `created`, `ad_url`, `apply_url`, `job_ids` (Platsbanken-id, döljer jobbet bland Nya jobb).
+- `status`: `att-skicka`, `skickad`, `bekraftad`, `intervju`, `erbjudande`, `avslag`, `tackat-nej` eller `avslutad`. De tre sista hamnar i arkivet.
+- `applied` (datum då ansökan skickades, `null` om okänt; då kan `applied_month` = `ÅÅÅÅ-MM` anges för månadsrapporten).
+- `todo`: korta steg som visas under Att göra. Töm listan när ansökan är skickad.
+- `events`: `{ "date": "ÅÅÅÅ-MM-DD", "text": "..." }` i tidsordning. Den sista händelsen visas som senaste läget.
+
+## Så uppdateras filen
+- Sök i Gmail: `newer_than:2d in:anywhere -from:linkedin.com -from:jooble.org` och matcha mot företagen i filen (avsändardomän, företagsnamn, tjänst eller rekryteringsfirma). Rekryteringssystem som ReachMee, SuccessFactors, Heartpace, Ponty, Teamtailor, Varbi och Jobylon räknas till företaget som nämns i mejlet.
+- Bekräftelse på mottagen ansökan: `status` = `bekraftad` (om den var `att-skicka` eller `skickad`), sätt `applied` till mejlets datum om det saknas, töm `todo`, lägg till händelsen "Bekräftelse mottagen".
+- Kallelse till intervju eller test: `status` = `intervju`, händelse "Intervju <datum och tid>" eller "Inbjudan till test". Okänt datum: "Inbjudan till intervju".
+- Avslag: `status` = `avslag`, händelse "Avslag". Erbjudande: `status` = `erbjudande`.
+- Lägg aldrig till samma händelse två gånger. Sätt `updated` till dagens datum när något ändrats.
+- Kontrollera att filen är giltig JSON och följer integritetsreglerna, committa och pusha till `main`.
