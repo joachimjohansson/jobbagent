@@ -26,6 +26,29 @@
       ]
     },
     {
+      "id": "sulzer-inside-sales",
+      "company": "Sulzer (Nordic Water)",
+      "role": "Inside Sales Engineer",
+      "place": "Mölndal",
+      "status": "att-skicka",
+      "created": "2026-11-11",
+      "applied": null,
+      "deadline": null,
+      "ad_url": "https://sulzer.wd502.myworkdayjobs.com/SulzerJobs/job/Mlndal/Inside-Sales-Engineer_JR104378",
+      "apply_url": "https://sulzer.wd502.myworkdayjobs.com/SulzerJobs/job/Mlndal/Inside-Sales-Engineer_JR104378/apply",
+      "job_ids": [],
+      "todo": [
+        "Läs igenom CV och personligt brev",
+        "Skicka snart, annonsen har legat ute i över 30 dagar"
+      ],
+      "events": [
+        {
+          "date": "2026-11-11",
+          "text": "CV och brev klara"
+        }
+      ]
+    },
+    {
       "id": "momentum-kundservice",
       "company": "Momentum Industrial",
       "role": "Kundservice / innesäljare",
