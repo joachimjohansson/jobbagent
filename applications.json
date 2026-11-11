@@ -75,6 +75,32 @@
       ]
     },
     {
+      "id": "flowserve-sales-engineer",
+      "company": "Flowserve",
+      "role": "Sales Engineer",
+      "place": "Göteborg",
+      "status": "att-skicka",
+      "created": "2026-11-11",
+      "applied": null,
+      "deadline": null,
+      "ad_url": "https://careers.flowserve.com/goteborg-swe/sales-engineer/079789A65B2E4CB9AEF049094DB69B9D/job/",
+      "apply_url": "https://rr.jobsyn.org/079789A65B2E4CB9AEF049094DB69B9D10",
+      "job_ids": [
+        "li-4418173976",
+        "li-4427593192"
+      ],
+      "todo": [
+        "Läs igenom CV och personligt brev (engelska)",
+        "Skicka via Flowserves ansökningssida"
+      ],
+      "events": [
+        {
+          "date": "2026-11-11",
+          "text": "CV och brev klara"
+        }
+      ]
+    },
+    {
       "id": "aco-nordic-innesaljare",
       "company": "ACO Nordic",
       "role": "Innesäljare",
