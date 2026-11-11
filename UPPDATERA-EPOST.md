@@ -25,10 +25,10 @@ Repot är offentligt: lägg aldrig in inloggningslänkar, token eller personuppg
 - Spara: `id` (= jk), `title`, `company`, `location`, `alert` (söksträngen i rubriken, t.ex. `teknisk säljare`), `received`, `url`. Samma `jk` kan återkomma i flera mejl: lägg bara till den en gång.
 - Kontrollera att `grep -c -E 'token|qd=|alid' indeed-epost.json` ger 0.
 
-## Arkivera mejlen efter genomgång
-- När filerna är uppdaterade (och pushen lyckats) arkiveras alla LinkedIn- och Jooble-mejl som gåtts igenom: ta bort etiketten `INBOX` från tråden (`unlabel_thread` med `labelIds: ["INBOX"]`). Ta inte bort `UNREAD` och radera inget.
+## Markera mejlen som lästa efter genomgång
+- Arkivera inte. När filerna är uppdaterade (och pushen lyckats, eller inget behövde ändras) markeras alla LinkedIn-, Jooble- och Indeed-mejl som gåtts igenom som lästa: ta bort etiketten `UNREAD` från tråden (`unlabel_thread` med `labelIds: ["UNREAD"]`). Låt `INBOX` vara kvar och radera inget.
 - Gäller bara trådar från `jobalerts-noreply@linkedin.com`, `subscribe@se.jooble.org` och `donotreply@jobalert.indeed.com` som ingick i dagens sökningar, inklusive Joobles dagliga sammanställningar och LinkedIn-mejl om stängda aviseringar.
-- Om uppdateringen eller pushen misslyckas arkiveras inget, så att mejlen tas med vid nästa körning.
+- Om uppdateringen eller pushen misslyckas markeras inget som läst, så att mejlen tas med vid nästa körning.
 - Rör aldrig mejl från andra avsändare här (ansökningssvar hanteras separat).
 
 ## Gemensamt
