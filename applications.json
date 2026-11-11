@@ -2,6 +2,30 @@
   "updated": "2026-11-11",
   "applications": [
     {
+      "id": "christian-berner-kontakt",
+      "company": "Christian Berner",
+      "role": "Spontan kontakt, filterteknik",
+      "place": "Göteborg",
+      "status": "att-skicka",
+      "created": "2026-11-11",
+      "applied": null,
+      "deadline": "2026-11-12",
+      "ad_url": null,
+      "apply_url": null,
+      "job_ids": [],
+      "todo": [
+        "Välj ett av de två mejlutkasten i Gmail och radera det andra",
+        "Fyll i efternamnet på den som tipsade",
+        "Bifoga CV och skicka"
+      ],
+      "events": [
+        {
+          "date": "2026-11-11",
+          "text": "Mejlutkast klara"
+        }
+      ]
+    },
+    {
       "id": "momentum-kundservice",
       "company": "Momentum Industrial",
       "role": "Kundservice / innesäljare",
