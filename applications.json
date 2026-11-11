@@ -12,14 +12,43 @@
       "deadline": "2026-11-13",
       "ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31596127",
       "apply_url": "https://jobs.hiring.heartpace.com/momentumindustrial/kundservice-goteborg/view-job?job_board_slug=platsbanken",
-      "job_ids": ["31596127"],
+      "job_ids": [
+        "31596127"
+      ],
       "todo": [
         "Läs igenom CV och personligt brev",
         "Ange referens P664OV60J i ansökan",
         "Skicka via ansökningssidan"
       ],
       "events": [
-        { "date": "2026-11-11", "text": "CV och brev klara" }
+        {
+          "date": "2026-11-11",
+          "text": "CV och brev klara"
+        }
+      ]
+    },
+    {
+      "id": "becker-saljkoordinator",
+      "company": "Becker Vakuumteknik",
+      "role": "Säljkoordinator",
+      "place": "Mölndal",
+      "status": "att-skicka",
+      "created": "2026-11-11",
+      "applied": null,
+      "deadline": "2026-11-15",
+      "ad_url": "https://effektiv.se/jobb/forsaljning/goteborg/saljkoordinator-till-becker-vakuumteknik-i-goteborg-8566943",
+      "apply_url": "https://jobb.effektiv.se/jobs/8566943-saljkoordinator-till-becker-vakuumteknik-i-goteborg/applications/new",
+      "job_ids": [],
+      "todo": [
+        "Läs igenom CV:t",
+        "Skicka via Effektiv (inget personligt brev behövs)",
+        "Räkna med arbetspsykologiska tester"
+      ],
+      "events": [
+        {
+          "date": "2026-11-11",
+          "text": "CV klart"
+        }
       ]
     },
     {
@@ -33,13 +62,18 @@
       "deadline": "2026-12-06",
       "ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31703172",
       "apply_url": "https://pnty-apply.ponty-system.se/oio?id=1418&pnty_src=platsbanken",
-      "job_ids": ["31703172"],
+      "job_ids": [
+        "31703172"
+      ],
       "todo": [
         "Läs igenom CV och personligt brev",
         "Skicka via ansökningssidan"
       ],
       "events": [
-        { "date": "2026-11-11", "text": "CV och brev klara" }
+        {
+          "date": "2026-11-11",
+          "text": "CV och brev klara"
+        }
       ]
     },
     {
@@ -53,11 +87,19 @@
       "deadline": "2026-11-22",
       "ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31659907",
       "apply_url": null,
-      "job_ids": ["31659907"],
+      "job_ids": [
+        "31659907"
+      ],
       "todo": [],
       "events": [
-        { "date": "2026-11-05", "text": "Ansökan skickad" },
-        { "date": "2026-11-05", "text": "Bekräftelse mottagen" }
+        {
+          "date": "2026-11-05",
+          "text": "Ansökan skickad"
+        },
+        {
+          "date": "2026-11-05",
+          "text": "Bekräftelse mottagen"
+        }
       ]
     },
     {
@@ -74,8 +116,14 @@
       "job_ids": [],
       "todo": [],
       "events": [
-        { "date": "2026-11-05", "text": "Ansökan skickad" },
-        { "date": "2026-11-05", "text": "Bekräftelse mottagen" }
+        {
+          "date": "2026-11-05",
+          "text": "Ansökan skickad"
+        },
+        {
+          "date": "2026-11-05",
+          "text": "Bekräftelse mottagen"
+        }
       ]
     },
     {
@@ -90,10 +138,15 @@
       "deadline": "2026-12-06",
       "ad_url": "https://arbetsformedlingen.se/platsbanken/annonser/31648096",
       "apply_url": null,
-      "job_ids": ["31648096"],
+      "job_ids": [
+        "31648096"
+      ],
       "todo": [],
       "events": [
-        { "date": null, "text": "Ansökan skickad, datum okänt" }
+        {
+          "date": null,
+          "text": "Ansökan skickad, datum okänt"
+        }
       ]
     }
   ]
