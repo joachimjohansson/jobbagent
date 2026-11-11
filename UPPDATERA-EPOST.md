@@ -18,6 +18,12 @@ Repot är offentligt: lägg aldrig in inloggningslänkar, token eller personuppg
 - Spara: `id` (= uid), `title`, `company`, `location`, `alert` (`ckey` i länken: `sales engineer` eller `teknisk säljare`), `received`, `url`.
 - Rubriker kan ha fet matematisk Unicode: normalisera med NFKC.
 
+## Arkivera mejlen efter genomgång
+- När filerna är uppdaterade (och pushen lyckats) arkiveras alla LinkedIn- och Jooble-mejl som gåtts igenom: ta bort etiketten `INBOX` från tråden (`unlabel_thread` med `labelIds: ["INBOX"]`). Ta inte bort `UNREAD` och radera inget.
+- Gäller bara trådar från `jobalerts-noreply@linkedin.com` och `subscribe@se.jooble.org` som ingick i dagens sökningar, inklusive Joobles dagliga sammanställningar och LinkedIn-mejl om stängda aviseringar.
+- Om uppdateringen eller pushen misslyckas arkiveras inget, så att mejlen tas med vid nästa körning.
+- Rör aldrig mejl från andra avsändare här (ansökningssvar hanteras separat).
+
 ## Gemensamt
 - Lägg till nya jobb (nya `id`), ta inte bort gamla förrän de är över 30 dagar. Sätt `updated` till dagens datum.
 - Kontrollera att filerna är giltig JSON och att inga `token=` finns: `grep -c token linkedin.json jooble-epost.json` ska ge 0.
