@@ -52,6 +52,29 @@
       ]
     },
     {
+      "id": "welldana-support-eftermarknad",
+      "company": "Welldana",
+      "role": "Support- och eftermarknadsspecialist",
+      "place": "Göteborg/Västkusten",
+      "status": "att-skicka",
+      "created": "2026-11-11",
+      "applied": null,
+      "deadline": null,
+      "ad_url": "https://www.intenso.se/sv/annons/26773690-support--och-eftermarknadsspecialist-welldana-as-sverige-filial-goteborg",
+      "apply_url": "https://candidate.masterhelp.se/apply/23ee9818-47ad-4f87-8e9e-5191595f36e6",
+      "job_ids": [],
+      "todo": [
+        "Läs igenom CV och personligt brev",
+        "Skicka snarast, urvalet sker löpande"
+      ],
+      "events": [
+        {
+          "date": "2026-11-11",
+          "text": "CV och brev klara"
+        }
+      ]
+    },
+    {
       "id": "aco-nordic-innesaljare",
       "company": "ACO Nordic",
       "role": "Innesäljare",
