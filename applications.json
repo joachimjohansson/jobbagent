@@ -38,13 +38,17 @@
       "apply_url": "https://sulzer.wd502.myworkdayjobs.com/SulzerJobs/job/Mlndal/Inside-Sales-Engineer_JR104378/apply",
       "job_ids": [],
       "todo": [
-        "Läs igenom CV och personligt brev",
+        "Läs igenom CV och personligt brev (engelska)",
         "Skicka snart, annonsen har legat ute i över 30 dagar"
       ],
       "events": [
         {
           "date": "2026-11-11",
           "text": "CV och brev klara"
+        },
+        {
+          "date": "2026-11-11",
+          "text": "CV och brev omgjorda till engelska"
         }
       ]
     },
