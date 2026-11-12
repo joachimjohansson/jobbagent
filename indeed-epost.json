@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "source": "Indeed-jobbaviseringar via Gmail",
   "jobs": [
     {
@@ -280,6 +280,33 @@
       "alert": "teknisk säljare",
       "received": "2026-11-07",
       "url": "https://se.indeed.com/viewjob?jk=1880d62a600522ff"
+    },
+    {
+      "id": "24002ceca87a862f",
+      "title": "Customer Success Manager - UK market",
+      "company": "Verendus",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-12",
+      "url": "https://se.indeed.com/viewjob?jk=24002ceca87a862f"
+    },
+    {
+      "id": "ce2126994a0f48ae",
+      "title": "Postdoktor i djuphavsbiogeokemi och miljöbedömning",
+      "company": "Göteborgs universitet",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-12",
+      "url": "https://se.indeed.com/viewjob?jk=ce2126994a0f48ae"
+    },
+    {
+      "id": "12f043d53129ba07",
+      "title": "Systemutvecklare sökes",
+      "company": "Västra Götalandsregionen",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-12",
+      "url": "https://se.indeed.com/viewjob?jk=12f043d53129ba07"
     }
   ]
 }

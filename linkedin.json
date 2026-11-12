@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "source": "LinkedIn jobbaviseringar via Gmail",
   "jobs": [
     {
@@ -514,6 +514,42 @@
       "alert": "Förvaltare",
       "received": "2026-11-10",
       "url": "https://www.linkedin.com/jobs/view/4488886796/"
+    },
+    {
+      "id": "4490016893",
+      "title": "Innesäljare",
+      "company": "HERTIN / MANKERT",
+      "location": "Nordöstra Göteborg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-12",
+      "url": "https://www.linkedin.com/jobs/view/4490016893/"
+    },
+    {
+      "id": "4482131369",
+      "title": "Sales Manager",
+      "company": "Danfoss",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-12",
+      "url": "https://www.linkedin.com/jobs/view/4482131369/"
+    },
+    {
+      "id": "4488697050",
+      "title": "Senior säljare- Entreprenadmaskiner & Begagnatansvarig",
+      "company": "Söderberg & Haak Maskin AB",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-12",
+      "url": "https://www.linkedin.com/jobs/view/4488697050/"
+    },
+    {
+      "id": "4418135290",
+      "title": "Account Manager",
+      "company": "Zoomlion",
+      "location": "Greater Gothenburg Metropolitan Area",
+      "alert": "Säljingenjör",
+      "received": "2026-11-12",
+      "url": "https://www.linkedin.com/jobs/view/4418135290/"
     }
   ]
 }
