@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "source": "Indeed-jobbaviseringar via Gmail",
   "jobs": [
     {
@@ -307,6 +307,42 @@
       "alert": "teknisk säljare",
       "received": "2026-11-12",
       "url": "https://se.indeed.com/viewjob?jk=12f043d53129ba07"
+    },
+    {
+      "id": "dba2f6e8f6fbc00e",
+      "title": "Fartygsstrateg inom Affären Båt till Västtrafik",
+      "company": "Västtrafik AB",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-13",
+      "url": "https://se.indeed.com/viewjob?jk=dba2f6e8f6fbc00e"
+    },
+    {
+      "id": "05aec463ee19ffb0",
+      "title": "Lösningsarkitekt",
+      "company": "Kronofogdemyndigheten",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-13",
+      "url": "https://se.indeed.com/viewjob?jk=05aec463ee19ffb0"
+    },
+    {
+      "id": "b8597c2f10cf5404",
+      "title": "Lösningsarkitekt",
+      "company": "Kronofogden",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-13",
+      "url": "https://se.indeed.com/viewjob?jk=b8597c2f10cf5404"
+    },
+    {
+      "id": "8a523f5ee90830d4",
+      "title": "1:e forskningsingenjör inom biofysik",
+      "company": "Göteborgs universitet",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-13",
+      "url": "https://se.indeed.com/viewjob?jk=8a523f5ee90830d4"
     }
   ]
 }

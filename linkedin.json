@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "source": "LinkedIn jobbaviseringar via Gmail",
   "jobs": [
     {
@@ -595,6 +595,60 @@
       "alert": "Förvaltare",
       "received": "2026-11-12",
       "url": "https://www.linkedin.com/jobs/view/4489937095/"
+    },
+    {
+      "id": "4488539334",
+      "title": "Sales Specialist",
+      "company": "Aarcalev Technology Solutions",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-13",
+      "url": "https://www.linkedin.com/jobs/view/4488539334/"
+    },
+    {
+      "id": "4488522810",
+      "title": "Technical Sales Manager (m/f/d) – Lubricants & Fuels",
+      "company": "KRAHN Nordics AB",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-13",
+      "url": "https://www.linkedin.com/jobs/view/4488522810/"
+    },
+    {
+      "id": "4489254910",
+      "title": "Distriktssäljare väst",
+      "company": "System Edström",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-13",
+      "url": "https://www.linkedin.com/jobs/view/4489254910/"
+    },
+    {
+      "id": "4490336087",
+      "title": "Innesäljare EL till Ahlsell Göteborg/Almedal",
+      "company": "Ahlsell Sverige AB",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-13",
+      "url": "https://www.linkedin.com/jobs/view/4490336087/"
+    },
+    {
+      "id": "4474115980",
+      "title": "Sales Executive",
+      "company": "SQLI Nordics",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-13",
+      "url": "https://www.linkedin.com/jobs/view/4474115980/"
+    },
+    {
+      "id": "4490337376",
+      "title": "Produktspecialist – Urologi & Kardiologi",
+      "company": "Medu Sverige AB",
+      "location": "Västra Götaland County, Sweden",
+      "alert": "Säljingenjör",
+      "received": "2026-11-13",
+      "url": "https://www.linkedin.com/jobs/view/4490337376/"
     }
   ]
 }
