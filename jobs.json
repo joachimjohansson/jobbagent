@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T12:56:46+00:00",
+ "updated": "2026-11-14T12:00:20+00:00",
  "jobs": [
   {
    "id": "31724175",
@@ -684,44 +684,6 @@
    ],
    "found_by": [
     "innesäljare"
-   ]
-  },
-  {
-   "id": "31596127",
-   "title": "Kundservice Göteborg",
-   "employer": "Momentum Industrial AB",
-   "place": "Göteborg",
-   "published": "2026-10-14",
-   "deadline": "2026-11-13",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31596127",
-   "source": "Platsbanken",
-   "sources": [
-    {
-     "name": "Platsbanken",
-     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31596127"
-    }
-   ],
-   "found_by": [
-    "innesäljare"
-   ]
-  },
-  {
-   "id": "31584455",
-   "title": "Teknisk säljare",
-   "employer": "Nokalux Aktiebolag",
-   "place": "Göteborg",
-   "published": "2026-10-12",
-   "deadline": "2026-11-13",
-   "url": "https://arbetsformedlingen.se/platsbanken/annonser/31584455",
-   "source": "Platsbanken",
-   "sources": [
-    {
-     "name": "Platsbanken",
-     "url": "https://arbetsformedlingen.se/platsbanken/annonser/31584455"
-    }
-   ],
-   "found_by": [
-    "teknisk säljare"
    ]
   },
   {
