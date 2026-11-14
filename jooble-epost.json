@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "source": "Jooble-utskick via Gmail",
  "jobs": [
   {
@@ -280,6 +280,33 @@
    "alert": "teknisk säljare",
    "url": "https://se.jooble.org/desc/-8825505569302619097",
    "received": "2026-11-13"
+  },
+  {
+   "id": "6155539889797903943",
+   "title": "Kundansvarig säljare",
+   "company": "Isaksson Byggbemanning AB",
+   "location": "Göteborg",
+   "alert": "teknisk säljare",
+   "received": "2026-11-14",
+   "url": "https://se.jooble.org/desc/6155539889797903943"
+  },
+  {
+   "id": "-5494951699630000998",
+   "title": "Vill jobba med julbord?",
+   "company": "Progressio",
+   "location": "Göteborg",
+   "alert": "teknisk säljare",
+   "received": "2026-11-14",
+   "url": "https://se.jooble.org/desc/-5494951699630000998"
+  },
+  {
+   "id": "-6222238801688178317",
+   "title": "Yttre fastighetsskötsel",
+   "company": "Optimal Service Väst AB",
+   "location": "Mölndal",
+   "alert": "teknisk säljare",
+   "received": "2026-11-14",
+   "url": "https://se.jooble.org/desc/-6222238801688178317"
   }
  ]
 }
