@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "source": "LinkedIn jobbaviseringar via Gmail",
   "jobs": [
     {
@@ -703,6 +703,42 @@
       "alert": "Förvaltare",
       "url": "https://www.linkedin.com/jobs/view/4488514115/",
       "received": "2026-11-13"
+    },
+    {
+      "id": "4490593963",
+      "title": "Your job alert for Säljingenjör in Gothenburg",
+      "company": "Application Engineer",
+      "location": "Danfoss",
+      "alert": "Säljingenjör",
+      "received": "2026-11-14",
+      "url": "https://www.linkedin.com/jobs/view/4490593963/"
+    },
+    {
+      "id": "4488906471",
+      "title": "Teknisk säljare",
+      "company": "AddSell Sverige AB",
+      "location": "Landvetter",
+      "alert": "Säljingenjör",
+      "received": "2026-11-14",
+      "url": "https://www.linkedin.com/jobs/view/4488906471/"
+    },
+    {
+      "id": "4490747064",
+      "title": "Sales Executive, Göteborg",
+      "company": "Dalux",
+      "location": "Gothenburg",
+      "alert": "Säljingenjör",
+      "received": "2026-11-14",
+      "url": "https://www.linkedin.com/jobs/view/4490747064/"
+    },
+    {
+      "id": "4478264618",
+      "title": "Säljrepresentant Distribution till Husqvarna Construction - Region nedre Norrland",
+      "company": "Husqvarna Group",
+      "location": "Greater Gothenburg Metropolitan Area",
+      "alert": "Säljingenjör",
+      "received": "2026-11-14",
+      "url": "https://www.linkedin.com/jobs/view/4478264618/"
     }
   ]
 }

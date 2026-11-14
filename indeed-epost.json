@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "source": "Indeed-jobbaviseringar via Gmail",
   "jobs": [
     {
@@ -343,6 +343,60 @@
       "alert": "teknisk säljare",
       "received": "2026-11-13",
       "url": "https://se.indeed.com/viewjob?jk=8a523f5ee90830d4"
+    },
+    {
+      "id": "46b41a05ce4a8ca7",
+      "title": "Sales Executive, Göteborg",
+      "company": "Dalux",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-14",
+      "url": "https://se.indeed.com/viewjob?jk=46b41a05ce4a8ca7"
+    },
+    {
+      "id": "74fcc01167402d1a",
+      "title": "Account Manager E&P",
+      "company": "Air Liquide",
+      "location": "Mölndal",
+      "alert": "teknisk säljare",
+      "received": "2026-11-14",
+      "url": "https://se.indeed.com/viewjob?jk=74fcc01167402d1a"
+    },
+    {
+      "id": "ed7d676f91f17a0c",
+      "title": "Industrinära senior forskare inom värmebehandling",
+      "company": "RISE Research Institutes of Sweden AB",
+      "location": "Mölndal",
+      "alert": "teknisk säljare",
+      "received": "2026-11-14",
+      "url": "https://se.indeed.com/viewjob?jk=ed7d676f91f17a0c"
+    },
+    {
+      "id": "37f955fa29c3988e",
+      "title": "Utbildningssamordnare",
+      "company": "Göteborgs universitet",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-14",
+      "url": "https://se.indeed.com/viewjob?jk=37f955fa29c3988e"
+    },
+    {
+      "id": "b9a4c07ac85e11a5",
+      "title": "Verksamhetsutvecklare",
+      "company": "Västra Götalandsregionen",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-14",
+      "url": "https://se.indeed.com/viewjob?jk=b9a4c07ac85e11a5"
+    },
+    {
+      "id": "53a6fa467bf5f640",
+      "title": "Föreståndare för Wexsus vid Göteborgs universitet",
+      "company": "Göteborgs universitet",
+      "location": "Göteborg",
+      "alert": "teknisk säljare",
+      "received": "2026-11-14",
+      "url": "https://se.indeed.com/viewjob?jk=53a6fa467bf5f640"
     }
   ]
 }
